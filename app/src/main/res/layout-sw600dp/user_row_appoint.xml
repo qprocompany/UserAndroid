@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:id="@+id/detail"
+        android:layout_width="374dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/NamaPoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/thumbnail"
+            android:fontFamily="sans-serif-medium"
+            android:text="namapoli"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contact_name"
+            android:textSize="@dimen/contact_name" />
+
+        <TextView
+            android:id="@+id/Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/thumbnail"
+            android:fontFamily="sans-serif-medium"
+            android:text="nama"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contact_name"
+            android:textSize="@dimen/contact_name" />
+
+        <TextView
+            android:id="@+id/Tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="tanggal"
+            android:textColor="@color/contact_number"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

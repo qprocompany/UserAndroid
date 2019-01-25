@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RiwayatTransaksi">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="99dp"
+            android:text="Riwayat Transaksi"
+            android:textColor="@color/mdtp_button_color"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="102dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/namatxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="nama"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/namapasien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/doktertxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="dokter"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/namadoktertxt"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/mdtp_button_color"></TextView>
+
+            <TextView
+                android:id="@+id/tanggaltxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:text="Tanggal"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/mdtp_button_color"></TextView>
+
+            <TextView
+                android:id="@+id/jamtxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:text="Jam"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/jam"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/mdtp_button_color"></TextView>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Home"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="71dp"
+            android:text="Home"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="413dp" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

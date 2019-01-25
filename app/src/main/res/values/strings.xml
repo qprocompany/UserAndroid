@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">RSUD SUMSEL</string>
+    <string name="action_settings">Settings</string>
+    <string name="toolbar_title">Tempat Tidur</string>
+    <string name="toolbar_title_Jadwal">Jadwal Dokter</string>
+    <string name="toolbar_title_pendaftaran">Pendaftaran</string>
+    <string name="toolbar_title_dokter">Dokter</string>
+    <string name="toolbar_title_kamar_detail">Detail Kamar</string>
+    <string name="toolbar_title_poli">Poli</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Type name…</string>
+    <string name="API_Key">sk.eyJ1IjoiZGVubGltIiwiYSI6ImNqbThzaWpmcjA1cmYzcXF0ZHB6MHRzc2YifQ.k4oK_ScSEVQDfE6s5BVxpA</string>
+    <string name="message_write_error">Error Writing Message !</string>
+    <string name="message_write_success">Successfully written to Tag !</string>
+    <string name="message_write_progress">Writing to Tag..</string>
+    <string name="message_tag_detected">NFC Tag Detected !</string>
+    <string name="message_read_tag">Read from NFC Tag</string>
+    <string name="message_write_tag">Write to NFC Tag</string>
+    <string name="message_tap_tag">Tap the NFC Tag to your device !</string>
+    <string name="hint_message">Message</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pendaftaran_dokter">PendaftaranDokter</string>
+    <string name="title_activity_pendaftaran_poli">PendaftaranPoli</string>
+
+    <string name="label_loading">This Is Empty View</string>
+    <string name="label_interval">Interval: </string>
+    <string name="label_indicator_size">Indicator size: </string>
+    <string name="label_animate_indicators">Animate indicators: </string>
+    <string name="label_hide_indicators">Hide Indicators</string>
+    <string name="label_loop_slides">Loop slides: </string>
+
+    <string-array name="page_indicators">
+        <item>Circle</item>
+        <item>Dash</item>
+        <item>Round Square</item>
+        <item>Square</item>
+        <item>Custom</item>
+    </string-array>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_activity_jadwal_dokter">JadwalDokter</string>
+    <string name="title_activity_appointment">Appointment</string>
+    <string name="title_activity_history">History</string>
+
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailDokter">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="32dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <com.pkmmte.view.CircularImageView
+                android:id="@+id/img_detail"
+                android:layout_width="185dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/img_detail"
+                android:alpha="0.5"
+                android:background="@color/colorWhite" />
+
+            <TextView
+
+                android:id="@+id/txt_detail_description_classcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_detail"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txt_detail_description_classname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_detail"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/namatxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_detail_description_classname"
+                android:layout_gravity="bottom"
+                android:text="nama"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/fasility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/namatxt"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/nama2"
+                    android:layout_width="346dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pengalaman"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:textColor="@color/mdtp_button_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/qtytext1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fasility"
+                android:layout_gravity="bottom"
+                android:text="dokter spesialis"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablelinier"
+                android:layout_width="354dp"
+                android:layout_height="28dp"
+                android:layout_below="@+id/qtytext1"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/mdtp_button_color"></TextView>
+
+            <TextView
+                android:id="@+id/pengalaman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tablelinier"
+                android:layout_gravity="bottom"
+                android:text="Tahun Pengalaman"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/pengalamantxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pengalaman"
+                android:layout_gravity="bottom"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pengalamantxt"
+                android:text="Keterangan"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ket"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>
