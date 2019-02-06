@@ -10,12 +10,11 @@
 
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottombavigation"
+        android:id="@+id/bottomNavView_Bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        design:menu="@menu/menu_utama"
-        >
+        design:menu="@menu/menu_utama">
 
     </android.support.design.widget.BottomNavigationView>
 

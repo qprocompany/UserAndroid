@@ -9,9 +9,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -71,25 +74,47 @@ public class Appointment extends AppCompatActivity {
             }
         });
         // white background notification bar
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.testbawah);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        final View iconView = bottomNavigationView.findViewById(android.support.design.R.id.icon);
+        final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+        final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+        layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+        iconView.setLayoutParams(layoutParams);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
+        MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
+
+//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
+//        for (int i = 0; i < menuView.getChildCount(); i++) {
+//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+//            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, zdisplayMetrics);
+//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+//            iconView.setLayoutParams(layoutParams);
+//        }
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_Account:
-                        break;
+                switch (item.getItemId()){
+
                     case R.id.ic_Home:
-                        Intent intent2 = new Intent(Appointment.this, MainActivity.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.ic_test:
-                        Intent intent1 = new Intent(Appointment.this, PendaftaranDokter.class);
+                        Intent intent1 = new Intent(Appointment.this, MainActivity.class);
                         startActivity(intent1);
                         break;
+
+                    case R.id.ic_Account:
+                        Intent intent2 = new Intent(Appointment.this, Main2Activity.class);
+                        startActivity(intent2);
+                        break;
+
+                    case R.id.ic_test:
+
+                        break;
+
                 }
                 return false;
             }

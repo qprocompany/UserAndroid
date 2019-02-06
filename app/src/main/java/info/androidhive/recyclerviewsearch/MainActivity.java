@@ -68,12 +68,31 @@ public class MainActivity extends AppCompatActivity {
       //  usernames1 = usernames.toString();
 
 
-        BottomNavigationView = (BottomNavigationView) findViewById(R.id.bottombavigation);
-        BottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        final View iconView = bottomNavigationView.findViewById(android.support.design.R.id.icon);
+        final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+        final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+        layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+        iconView.setLayoutParams(layoutParams);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
+
+//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
+//        for (int i = 0; i < menuView.getChildCount(); i++) {
+//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+//            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, zdisplayMetrics);
+//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+//            iconView.setLayoutParams(layoutParams);
+//        }
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
                 switch (item.getItemId()){
 
                     case R.id.ic_Home:
@@ -94,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
         //  setupViews();
 
         //     flipperLayout = findViewById(R.id.flipper_layout);
@@ -136,29 +157,29 @@ public class MainActivity extends AppCompatActivity {
         //  tabLayout.getTabAt(1).setIcon(R.drawable.ic_tab_contacts);
         //  tabLayout.getTabAt(2).setIcon(R.drawable.ic_tab_contacts);
 
-//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
-//        for (int i = 0; i < menuView.getChildCount(); i++) {
-//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
-//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
-//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-//            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, zdisplayMetrics);
-//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
-//            iconView.setLayoutParams(layoutParams);
-//        }
+       // BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
+       // for (int i = 0; i < menuView.getChildCount(); i++) {
+       //     final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+       //     final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+       //     final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+       //     layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+       //     layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+       //     iconView.setLayoutParams(layoutParams);
+        }
 
 
-//        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
-//        for (int i = 0; i < menuView.getChildCount(); i++) {
-//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
-//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
-//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-//           layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
-//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
-//            iconView.setLayoutParams(layoutParams);
-//        }
+     //   BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottombavigation);
+      //  BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(1);
+       // for (int i = 0; i < menuView.getChildCount(); i++) {
+        //    final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+         //   final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+          //  final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+          // layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+          //  layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 9, displayMetrics);
+          // iconView.setLayoutParams(layoutParams);
+      //  }
 
-    }
+   // }
 
     // private void setLayout() {
        /* String url[] = new String[]{
@@ -201,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
     //    }, 1500);
 
     //  }
-
 
 
 

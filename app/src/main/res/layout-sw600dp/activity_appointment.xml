@@ -16,7 +16,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/holo_blue_bright"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -34,12 +33,12 @@
         app:layout_anchorGravity="bottom|center">
 
         <android.support.design.widget.BottomNavigationView
-            android:id="@+id/testbawah"
+            android:id="@+id/bottomNavView_Bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/ic_clear_day_24dp"
+            android:background="@color/colorWhite"
             app:menu="@menu/menu_utama">
 
 
