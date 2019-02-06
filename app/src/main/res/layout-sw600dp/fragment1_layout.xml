@@ -177,9 +177,9 @@
                         android:layout_marginStart="40dp"
                         android:layout_marginEnd="10dp"
                         android:background="@color/colorWhite"
-                        android:src="@drawable/emergencycall"
+                        android:src="@drawable/emergencybtn"
                         android:text="Start"
-                        android:tint="@color/colorAccent" />
+                       />
 
                     <TextView
                         android:id="@+id/textView2"

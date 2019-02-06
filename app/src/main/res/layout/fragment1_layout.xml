@@ -293,9 +293,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorWhite"
-                android:src="@drawable/emergencycall"
+                android:src="@drawable/emergencybtn"
                 android:text="Start"
-                android:tint="@color/colorAccent" />
+                />
 
             <TextView
                 android:id="@+id/textView2"

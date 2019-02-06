@@ -173,7 +173,7 @@
                         android:layout_alignParentLeft="true"
                         android:tint="@color/colorAccent"
                         android:background="@color/ColorTransparent"
-                        android:src="@drawable/emergencycall"
+                        android:src="@drawable/emergencybtn"
                         android:text="Start" />
 
                     <TextView

@@ -300,10 +300,9 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/colorWhite"
-                    android:src="@drawable/emergencycall"
+                    android:background="@drawable/emergencybtn"
                     android:text="Start"
-                    android:tint="@color/colorAccent" />
+                     />
 
                 <TextView
                     android:id="@+id/textView2"
