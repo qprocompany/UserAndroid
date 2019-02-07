@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\New folder (3).iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\New folder (3).iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/UserAndroid.iml" filepath="$PROJECT_DIR$/.idea/UserAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserAndroid.iml" filepath="$PROJECT_DIR$/UserAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\app\app.iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bannerslider/bannerslider.iml" filepath="$PROJECT_DIR$/bannerslider/bannerslider.iml" />
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\bannerslider\bannerslider.iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\bannerslider\bannerslider.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageslider/imageslider.iml" filepath="$PROJECT_DIR$/imageslider/imageslider.iml" />
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\imageslider\imageslider.iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\imageslider\imageslider.iml" />
       <module fileurl="file://$PROJECT_DIR$/ksoap2-j2se-full-2.1.2/ksoap2-j2se-full-2.1.2.iml" filepath="$PROJECT_DIR$/ksoap2-j2se-full-2.1.2/ksoap2-j2se-full-2.1.2.iml" />
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\ksoap2-j2se-full-2.1.2\ksoap2-j2se-full-2.1.2.iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\ksoap2-j2se-full-2.1.2\ksoap2-j2se-full-2.1.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\library\library.iml" filepath="C:\Users\DENNY\AndroidStudioProjects\UserAndroid\UserAndroid\library\library.iml" />
     </modules>
   </component>
 </project>
