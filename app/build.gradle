@@ -54,7 +54,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.3.1'
 
     // volley http library
-    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.google.code.gson:gson:2.6.2'
 
     // Google MAPS
@@ -75,7 +75,6 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.5.1'
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'com.pkmmte.view:circularimageview:1.1'
-    implementation 'com.github.HotBitmapGG:RingProgressBar:V1.2.2'
 
     implementation project(path: ':bannerslider')
 

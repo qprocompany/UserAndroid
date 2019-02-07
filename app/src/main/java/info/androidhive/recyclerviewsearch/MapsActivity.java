@@ -41,6 +41,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.mapbox.geojson.Point.fromLngLat;
+
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationEngineListener,
         PermissionsListener, MapboxMap.OnMapClickListener {
 
@@ -91,6 +93,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         map.addOnMapClickListener(this);
         enableLocation();
 
+
     }
     private void enableLocation(){
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
@@ -132,20 +135,26 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public void onMapClick(@NonNull LatLng point) {
+    public void onMapClick(@NonNull LatLng point ) {
         if (destionationMarker !=null){
             map.removeMarker(destionationMarker);
         }
         destionationMarker = map.addMarker(new MarkerOptions().position(point));
+       // destionationMarker = map.addMarker(new MarkerOptions().position(point).getMarker(106.8920853,-6.1523027));
+       // destionationMarker = map.addMarker(new MarkerOptions().fromLngLat(106.8920853,-6.1523027));
 
-        destinationPosition = Point.fromLngLat(point.getLongitude(),point.getLatitude());
-        origonPosition = Point.fromLngLat(originLocation.getLongitude(), originLocation.getLatitude());
+        destinationPosition = fromLngLat(106.8920853,-6.1523027 );
+        origonPosition = fromLngLat(originLocation.getLongitude(), originLocation.getLatitude());
+        //origonPosition = Point.fromLngLat( ,);
         getRoute(origonPosition,destinationPosition);
 
         startButton.setEnabled(true);
         startButton.setBackgroundResource(R.color.blue700);
 
     }
+
+
+
     private void getRoute(Point origin , Point Destination){
         NavigationRoute.builder()
                 .accessToken(Mapbox.getAccessToken())
@@ -230,10 +239,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onDestroy();
         mapView.onDestroy();
     }
-
-
-
-
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {

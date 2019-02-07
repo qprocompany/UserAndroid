@@ -28,7 +28,6 @@ import info.androidhive.recyclerviewsearch.MapsActivity;
 import info.androidhive.recyclerviewsearch.Pendaftaran;
 import info.androidhive.recyclerviewsearch.PicassoImageLoadingService;
 import info.androidhive.recyclerviewsearch.R;
-import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 import ss.com.bannerslider.Slider;
 import technolifestyle.com.imageslider.FlipperLayout;
 import technolifestyle.com.imageslider.FlipperView;
