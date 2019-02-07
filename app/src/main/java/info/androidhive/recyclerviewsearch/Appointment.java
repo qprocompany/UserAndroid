@@ -249,7 +249,7 @@ public class Appointment extends AppCompatActivity {
             CallSoap cs = new CallSoap();
             String medno = cs.InfoUser(val3);
             String[] temp = medno.split(",");
-            String data = cs.HistoryTomorrow(temp[0]);
+            String data = cs.History(temp[0]);
             return data;
         }
         @Override
@@ -270,16 +270,16 @@ public class Appointment extends AppCompatActivity {
                 if(data.length()<1)
                 {
                     String data2[] = s.split("#");
-                    poli.add(data2[0]);
-                    nama.add(data2[1]);
-                    tanggal.add(data2[2]);
+                    poli.add(data2[1]);
+                    nama.add(data2[2]);
+                    tanggal.add(data2[0]);
                 }
                 else {
                     String data1[] = s.split("%");
                     for (int i = 0; i < data.length()+1; i++) {
                         String data2[] = data1[i].split("#");
-                        poli.add(data2[2]);
-                        nama.add(data2[1]);
+                        poli.add(data2[1]);
+                        nama.add(data2[2]);
                         tanggal.add(data2[0]);
                     }
                 }
