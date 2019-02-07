@@ -323,13 +323,12 @@ public class CallSoap {
         return response.toString();
     }
 
-    public final String SOAP_ACTION_Picture = "http://tempuri.org/HistoryForToday";
-    public  final String OPERATION_NAME_Picture = "HistoryForToday";
-    public String Picture(String img)
+    public final String SOAP_ACTION_History = "http://tempuri.org/History";
+    public  final String OPERATION_NAME_History = "History";
+    public String History(String medicalno)
     {
-        base64String = img;
-        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_HistoryForToday);
-        request.addProperty("medicalno",base64String);
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_History);
+        request.addProperty("medicnom",medicalno);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
         envelope.dotNet = true;
@@ -340,7 +339,7 @@ public class CallSoap {
         Object response = null;
         try
         {
-            httpTransport.call(SOAP_ACTION_HistoryForToday,envelope);
+            httpTransport.call(SOAP_ACTION_History,envelope);
             response = envelope.getResponse();
             SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
             String data = response1.toString();
@@ -397,6 +396,91 @@ public class CallSoap {
         try
         {
             httpTransport.call(SOAP_ACTION_RegisterApps, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_Upload = "http://tempuri.org/UploadPictures";
+    public  final String OPERATION_NAME_Upload = "UploadPictures";
+    public String UploadImage(String medno,String base64)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Upload);
+        request.addProperty("medno",medno);
+        request.addProperty("picture",base64);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+        envelope.setOutputSoapObject(request);
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Upload, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_getimage = "http://tempuri.org/GetPictures";
+    public  final String OPERATION_NAME_getimage = "GetPictures";
+    public String getImage(String medno)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_getimage);
+        request.addProperty("medno",medno);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+        envelope.setOutputSoapObject(request);
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+        try
+        {
+            httpTransport.call(SOAP_ACTION_getimage, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_Promo = "http://tempuri.org/Promo";
+    public  final String OPERATION_NAME_Promo = "Promo";
+    public String Promo(String data1)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Promo);
+        request.addProperty("data",data1);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+        envelope.setOutputSoapObject(request);
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Promo, envelope);
             response = envelope.getResponse();
             SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
             String data = response1.toString();
