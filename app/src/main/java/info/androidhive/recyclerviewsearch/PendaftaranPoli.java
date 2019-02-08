@@ -55,9 +55,9 @@ public class PendaftaranPoli extends AppCompatActivity implements PoliAdapter.Co
 
     // url to fetch contacts json
     //st.Maria
-    private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/RegistrationAndroid.ashx";
+    //private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/RegistrationAndroid.ashx";
     //Qpro DB
-   // public  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/RegistrationAndroid.ashx";
+    public  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/RegistrationAndroid.ashx";
     //RSUD Palembang
     //public  final String URL = "http://192.168.80.112/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";
     //public  final String URL = "http://202.152.26.123/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";

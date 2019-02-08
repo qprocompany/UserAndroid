@@ -75,9 +75,9 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
 
     // url to fetch contacts json
     //st.maria
-    private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/GetPhysicianSrv.ashx";
+    //private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/GetPhysicianSrv.ashx";
     //qpro db
-   // private  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/GetPhysicianSrv.ashx";
+    private  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/GetPhysicianSrv.ashx";
     //rsud palembang
     //private  final String URL = "http://192.168.80.112/SPHAIRA_ADT/Services/GetPhysicianSrv.ashx";
     //public  final String URL = "http://202.152.26.123/SPHAIRA_ADT/Services/GetPhysicianSrv.ashx";
