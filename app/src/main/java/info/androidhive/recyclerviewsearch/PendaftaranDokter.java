@@ -63,6 +63,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
     public static String parname;
     public static String servname;
     public static String tgljanjian;
+    public static String medno;
 
     AlertDialog ag;
 
@@ -251,14 +252,19 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         String todayString = formatter.format(todayDate);
 
         //Toast.makeText(PendaftaranDokter.this,paramid.toString(),Toast.LENGTH_SHORT).show();
-        if(todayString.equals(date)) {
-            tgljanjian = date;
-            new pendaftarandokter(penampung1,servunit,paramid).execute();
+        /*if(tgljanjian.compareTo(todayString) >= 5)
+        {
+            Toast.makeText(PendaftaranDokter.this,"Tanggal Registrasi Paling Telat Hari Ini",Toast.LENGTH_SHORT).show();
         }
-        else {
+        else {*/
+        if (todayString.equals(date)) {
             tgljanjian = date;
-            new appointmentdokter(penampung1,date,workstation).execute();
+            new pendaftarandokter(penampung1, servunit, paramid).execute();
+        } else {
+            tgljanjian = date;
+            new appointmentdokter(penampung1, date, workstation).execute();
         }
+        //}
     }
 
     class appointmentdokter extends AsyncTask<String, String, String>
@@ -279,6 +285,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
             String Medno = data2[0].toString();
             String name1 = data2[1].toString();
             String email = data2[2].toString();
+            medno=Medno;
             String data1 = cs.Appointment(Medno, date, name1, email,work);
             return data1;
         }
@@ -293,7 +300,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
                 OpenMainMenu();
             }
             else{
-             //   Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokter.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
@@ -315,7 +322,8 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
             CallSoap cs = new CallSoap();
             String data = cs.InfoUser(username);
             String data2[] = data.split(",");
-            String Medno = data2[0].toString();
+            String Medno = data2[0];
+            medno = Medno;
             String data1 = cs.Registration(Medno,servunit,"personal",param);
             return data1;
         }
@@ -330,12 +338,12 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
             }
             else if(s.indexOf("duplicate") > 0)
             {
-              //  Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokter.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokter.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
             }
             else{
-           //     Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                //     Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -347,7 +355,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         paramid = dokter1.getParamedicID().toString();
         parname = dokter1.getParamedicName();
         servname = dokter1.getServiceUnitName();
-      //  Toast.makeText(PendaftaranDokter.this,dokter1.getPictureFileName(),Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(PendaftaranDokter.this,dokter1.getPictureFileName(),Toast.LENGTH_SHORT).show();
         Calendar now = Calendar.getInstance();
         DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
                 PendaftaranDokter.this,

@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,10 +31,16 @@ import java.util.Date;
 
 public class Confirmasi extends AppCompatActivity {
     TextView msgcin;
-    TextView medno,NoAntrian,namadokter,politujuan,tanggal;
+    TextView medno,NoAntrian,namadokter,politujuan,tanggal,number;
     ImageView img;
     ImageView ok;
-    private static String data = "";
+
+    //Save to FILE
+    private File file;
+    private boolean mFlashSupported;
+    private Handler mBackgroundHandler;
+    private HandlerThread mBackgroundThread;
+    public static final String TAG = "YOUR-TAG-NAME";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,54 +53,76 @@ public class Confirmasi extends AppCompatActivity {
         namadokter = (TextView) findViewById(R.id.namadokter);
         politujuan = (TextView) findViewById(R.id.politujuan);
         tanggal=(TextView) findViewById(R.id.tanggal);
-        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        number = (TextView) findViewById(R.id.number);
         if(PendaftaranDokter.message == "null") {
             Date todayDate = Calendar.getInstance().getTime();
             SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
             String todayString = formatter.format(todayDate);
-            new MedNo(Login.username1).execute();
-            if(PendaftaranDokterAfterPoli.tgljanjian1.equals(todayString)==true) {
-                //new Regno(medno.getText().toString()).execute();
+            msgcin.setText(todayString);
+            NoAntrian.setText("xxxxx");
+            if(PendaftaranDokterAfterPoli.tgljanjian1.equals(todayString)) {
+                //new MedNo(Login.username1).execute();
+                new Regno(PendaftaranDokterAfterPoli.medno).execute();
                 msgcin.setText("Registrasi");
                 NoAntrian.setText("xxxxx");
-                //medno.getText().toString()
-                Toast.makeText(Confirmasi.this,data,Toast.LENGTH_SHORT).show();
             }
             else {
-                //new AppNo(Login.username1).execute();
-                Toast.makeText(Confirmasi.this,data,Toast.LENGTH_SHORT).show();
+                //new MedNo(Login.username1).execute();
+                new AppNo(PendaftaranDokterAfterPoli.medno).execute();
                 msgcin.setText("Appointment");
                 NoAntrian.setText("-");
             }
+            //Toast.makeText(Confirmasi.this,PendaftaranDokter.medno,Toast.LENGTH_SHORT).show();
+            medno.setText(PendaftaranDokterAfterPoli.medno);
             namadokter.setText(PendaftaranDokterAfterPoli.parname1);
             politujuan.setText(PendaftaranPoli.servname1);
-            tanggal.setText(PendaftaranDokterAfterPoli.tgljanjian1);
-            //msgcin.setText("Terima kasih, data Anda telah kami simpan." + "\n" + PendaftaranDokterAfterPoli.message + " : ");
+
+            try {
+                String date = PendaftaranDokterAfterPoli.tgljanjian1;
+                SimpleDateFormat format = new SimpleDateFormat("d/M/yyyy");
+                Date newDate = format.parse(date);
+                format = new SimpleDateFormat("dd MMMM yyyy");
+                String date1 = format.format(newDate);
+                tanggal.setText(date1);
+            }catch (Exception e)
+            {
+                Toast.makeText(Confirmasi.this,e.toString(),Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
-            new MedNo(Login.username1).execute();
             Date todayDate = Calendar.getInstance().getTime();
             SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
             String todayString = formatter.format(todayDate);
-            if(PendaftaranDokter.tgljanjian.equals(todayString)==true) {
-                //new Regno(Login.username1).execute();
-                Toast.makeText(Confirmasi.this,data,Toast.LENGTH_SHORT).show();
+            if (PendaftaranDokter.tgljanjian.equals(todayString)) {
+                //new MedNo(Login.username1).execute();
+                new Regno(PendaftaranDokter.medno).execute();
                 msgcin.setText("Registrasi");
                 NoAntrian.setText("xxxx");
-            }
-            else {
-                //new AppNo(Login.username1).execute();
-                Toast.makeText(Confirmasi.this,data,Toast.LENGTH_SHORT).show();
+            } else {
+                //new MedNo(Login.username1).execute();
+                new AppNo(PendaftaranDokter.medno).execute();
                 msgcin.setText("Appointment");
                 NoAntrian.setText("-");
             }
 
+            medno.setText(PendaftaranDokter.medno);
             namadokter.setText(PendaftaranDokter.parname);
             politujuan.setText(PendaftaranDokter.servname);
-            tanggal.setText(PendaftaranDokter.tgljanjian);
-            //msgcin.setText("Terima kasih, data Anda telah kami simpan." + "\n"+ PendaftaranDokter.message + " : ");
+
+            try {
+                String date = PendaftaranDokter.tgljanjian;
+                SimpleDateFormat format = new SimpleDateFormat("d/M/yyyy");
+                Date newDate = format.parse(date);
+                format = new SimpleDateFormat("dd MMMM yyyy");
+                String date1 = format.format(newDate);
+                tanggal.setText(date1);
+            }catch (Exception e)
+            {
+                Toast.makeText(Confirmasi.this,e.toString(),Toast.LENGTH_SHORT).show();
+            }
         }
+
         ok = (ImageView) findViewById(R.id.ok);
         ok.setImageResource(R.drawable.confirmimage);
         ok.setOnClickListener(new View.OnClickListener() {
@@ -103,39 +133,6 @@ public class Confirmasi extends AppCompatActivity {
         });
     }
 
-    class MedNo extends AsyncTask<String, String, String>
-    {
-        private String username;
-        public MedNo(String username) {
-            this.username = username;
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            CallSoap cs = new CallSoap();
-            String data = cs.InfoUser(username);
-            String data1[] = data.split(",");
-            return data1[0];
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            medno.setText(s.toString());
-            //Toast.makeText(Confirmasi.this,s,Toast.LENGTH_SHORT).show();
-            data = s;
-            /*try {
-                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
-                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                img.setImageBitmap(bitmap);
-            } catch (WriterException e) {
-                e.printStackTrace();
-            }*/
-        }
-    }
-
     class Regno extends AsyncTask<String, String, String>
     {
         private String medno;
@@ -144,8 +141,6 @@ public class Confirmasi extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
             String medno1 = cs.RegNo(medno);
             return medno1;
@@ -154,15 +149,18 @@ public class Confirmasi extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-          //  Toast.makeText(Confirmasi.this,s,Toast.LENGTH_SHORT).show();
-            /*try {
+
+            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+            try {
                 BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
                 BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                 Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                 img.setImageBitmap(bitmap);
+                saveTempBitmap(bitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
-            }*/
+            }
+            number.setText(s);
         }
     }
 
@@ -174,8 +172,6 @@ public class Confirmasi extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
             String medno1 = cs.AppointNo(medno);
             return medno1;
@@ -186,14 +182,16 @@ public class Confirmasi extends AppCompatActivity {
             super.onPostExecute(s);
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             try {
-                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
+                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 100, 100);
                 BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                 Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                 img.setImageBitmap(bitmap);
                 saveTempBitmap(bitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
-            }
+            } /*catch (IOException e) {
+                e.printStackTrace();
+            }*/
         }
     }
 
@@ -226,6 +224,7 @@ public class Confirmasi extends AppCompatActivity {
         }
     }
 
+    // Checks if external storage is available for read and write
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {

@@ -31,6 +31,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
     public static String parname1;
     public static String tgljanjian1;
+    public static String medno;
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
     @Override
@@ -61,12 +62,17 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         String poli = PendaftaranPoli.poli1;
         tgljanjian1 = date;
         //Toast.makeText(PendaftaranDokterAfterPoli.this,paramedid,Toast.LENGTH_SHORT).show();
-        if(todayString.equals(date)) {
-            new pendaftaranpoli(penampung1,poli,paramedid.substring(1)).execute();
+        /*if(tgljanjian1.compareTo(todayString) >= 5)
+        {
+            Toast.makeText(PendaftaranDokterAfterPoli.this,"Tanggal Registrasi Paling Telat Hari Ini",Toast.LENGTH_SHORT).show();
         }
-        else {
-            new appointmentpoli(penampung1,date,workstation.substring(1)).execute();
+        else {*/
+        if (todayString.equals(date)) {
+            new pendaftaranpoli(penampung1, poli, paramedid.substring(1)).execute();
+        } else {
+            new appointmentpoli(penampung1, date, workstation.substring(1)).execute();
         }
+        //}
     }
 
     class dokterlist extends AsyncTask<String, String, String>
@@ -87,7 +93,6 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
             String data1 = cs.DokterByPoli(username);
-
             return data1;
         }
 
@@ -149,7 +154,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             String Medno = data2[0].toString();
             String name1 = data2[1].toString();
             String email = data2[2].toString();
-
+            medno=Medno;
             String data1 = cs.Appointment(Medno, date, name1, email,work);
 
             return data1;
@@ -161,13 +166,13 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
-             //   Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
                 message = "Appointment";
                 OpenMainMenu();
             }
             else{
-           //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -197,6 +202,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
             String Medno = data2[0].toString();
 
+            medno=Medno;
             String data1 = cs.Registration(Medno,servunit,"personal",paramid);
 
             return data1;
@@ -213,12 +219,12 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             }
             else if(s.indexOf("duplicate") > 0)
             {
-           //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokterAfterPoli.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
             }
             else{
-                //Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             }
         }
     }
