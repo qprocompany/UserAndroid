@@ -33,8 +33,7 @@ import info.androidhive.Adapter.SectionsPageAdapter;
 import info.androidhive.Fragment.Tab1Fragment;
 import ss.com.bannerslider.Slider;
 import technolifestyle.com.imageslider.FlipperLayout;
-
-
+import technolifestyle.com.imageslider.FlipperView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -181,11 +180,11 @@ public class MainActivity extends AppCompatActivity {
 
    // }
 
-    // private void setLayout() {
-       /* String url[] = new String[]{
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20rawat%20inap.jpg",
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20jantung%20sehat.jpg",
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20melahirkan.jpg"
+     private void setLayout() {
+        String url[] = new String[]{
+                //"http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20rawat%20inap.jpg",
+                //"http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/img_0.jpg"
+                //"http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20melahirkan.jpg"
         };
         for (int i = 0; i < 3; i++) {
             FlipperView view = new FlipperView(getBaseContext());
@@ -200,8 +199,9 @@ public class MainActivity extends AppCompatActivity {
                             , Toast.LENGTH_SHORT).show();
                 }
             });
-        }*/
-    //   }
+        }
+       }
+
 
 
 

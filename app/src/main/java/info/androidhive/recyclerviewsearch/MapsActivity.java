@@ -79,7 +79,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .origin(origonPosition)
                         .destination(destinationPosition)
                         //kalo test di true kalo real false
-                        .shouldSimulateRoute(true)
+                        .shouldSimulateRoute(false)
                         .build();
                 NavigationLauncher.startNavigation(MapsActivity.this,options);
             }
