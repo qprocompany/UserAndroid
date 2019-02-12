@@ -300,7 +300,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
                 OpenMainMenu();
             }
             else{
-                //   Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+                   Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokter.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
@@ -331,6 +331,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
                 message = "Pendaftaran";
@@ -342,8 +343,8 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
                 Toast.makeText(PendaftaranDokter.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
             }
             else{
-                //     Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
     }

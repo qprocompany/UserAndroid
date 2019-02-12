@@ -48,6 +48,14 @@
             android:textColor="@color/contact_number"
             android:textSize="12sp" />
 
+        <TextView
+            android:id="@+id/days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:textColor="@color/contact_number"
+            android:textSize="12sp" />
+
     </LinearLayout>
 
 </RelativeLayout>

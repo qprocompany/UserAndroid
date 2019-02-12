@@ -79,7 +79,7 @@ public class DetailDokter extends AppCompatActivity {
                 }
             }catch (Exception ec)
             {
-                Toast.makeText(DetailDokter.this,ec.toString(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DetailDokter.this,ec.toString(),Toast.LENGTH_SHORT).show();
             }
         }
     }

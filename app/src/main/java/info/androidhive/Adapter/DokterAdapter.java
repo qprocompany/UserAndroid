@@ -31,13 +31,14 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
     private ContactsAdapterListener listener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name, phone;
+        public TextView name, phone,day;
         public ImageView thumbnail;
 
         public MyViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
             phone = view.findViewById(R.id.phone);
+            day = view.findViewById(R.id.days);
             thumbnail = view.findViewById(R.id.thumbnail);
 
             view.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +72,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
         final Dokter Dokter = DokterListFiltered.get(position);
         holder.name.setText(Dokter.getParamedicName());
         holder.phone.setText(Dokter.getServiceUnitName());
-
+        holder.day.setText(Dokter.getDaysName());
         Glide.with(context)
                 .load(Dokter.getPictureFileName())
                 .apply(RequestOptions.circleCropTransform())

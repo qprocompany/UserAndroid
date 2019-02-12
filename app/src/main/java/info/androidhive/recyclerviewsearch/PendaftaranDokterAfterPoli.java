@@ -34,6 +34,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     public static String medno;
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
+    static final ArrayList<String> jadwalListday = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
         // toolbar fancy stuffr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Poli");
+        getSupportActionBar().setTitle("Dokter");
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         String id1 = PendaftaranPoli.poli1;
@@ -102,16 +103,18 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             String data[] = s.split("%");
             jadwalList1.clear();
+            jadwalListday.clear();
             for(int i  = 0; i < data.length;i++)
             {
                 if(data[i].equals("-")==false)
                 {
                     String temp[] = data[i].split("#");
                     jadwalList1.add(temp[0].substring(1));
+                    jadwalListday.add(temp[3].substring(1));
                 }
             }
 
-            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1));
+            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListday));
             grid.setOnItemClickListener((parent, view, position, id) ->  {
                         //Toast.makeText(getApplicationContext(),data[position], Toast.LENGTH_SHORT).show();
                         String temp[] = data[position].split("#");
@@ -181,7 +184,6 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     {
         private String username,servunit,paramid;
 
-
         public pendaftaranpoli(String username,String servunit,String paramid) {
 
             this.username = username;
@@ -191,7 +193,6 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         }
         @Override
         protected String doInBackground(String... strings) {
-
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
@@ -211,7 +212,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-
+            Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
                 message = "Pendaftaran";

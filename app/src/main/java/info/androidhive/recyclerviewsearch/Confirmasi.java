@@ -182,7 +182,7 @@ public class Confirmasi extends AppCompatActivity {
             super.onPostExecute(s);
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             try {
-                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 100, 100);
+                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
                 BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                 Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                 img.setImageBitmap(bitmap);

@@ -29,6 +29,9 @@ public class Dokter {
     @SerializedName("WorkStationCode")
     @Expose
     private String workStationCode;
+    @SerializedName("DaysName")
+    @Expose
+    private String daysName;
 
     public String getKeyField() {
         return keyField;
@@ -84,5 +87,13 @@ public class Dokter {
 
     public void setWorkStationCode(String workStationCode) {
         this.workStationCode = workStationCode;
+    }
+
+    public String getDaysName() {
+        return daysName;
+    }
+
+    public void setDaysName(String daysName) {
+        this.daysName = daysName;
     }
 }
