@@ -182,11 +182,11 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
     class pendaftaranpoli extends AsyncTask<String, String, String>
     {
-        private String username,servunit,paramid;
+        private String username1,servunit,paramid;
 
         public pendaftaranpoli(String username,String servunit,String paramid) {
 
-            this.username = username;
+            this.username1 = username;
             this.servunit = servunit;
             this.paramid = paramid;
             // Do something ...
@@ -197,11 +197,13 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
 
-            String data = cs.InfoUser(username);
+            String data = cs.InfoUser(username1);
 
             String data2[] = data.split(",");
 
             String Medno = data2[0].toString();
+            String name1 = data2[1].toString();
+            String email = data2[2].toString();
 
             medno=Medno;
             String data1 = cs.Registration(Medno,servunit,"personal",paramid);

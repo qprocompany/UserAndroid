@@ -40,7 +40,6 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:background="@drawable/ic_clear_day_24dp"
             app:menu="@menu/menu_utama">
 
 

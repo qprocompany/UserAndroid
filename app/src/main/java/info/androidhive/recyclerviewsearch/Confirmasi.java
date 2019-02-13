@@ -73,7 +73,7 @@ public class Confirmasi extends AppCompatActivity {
                 NoAntrian.setText("-");
             }
             //Toast.makeText(Confirmasi.this,PendaftaranDokter.medno,Toast.LENGTH_SHORT).show();
-            medno.setText(PendaftaranDokterAfterPoli.medno);
+            //medno.setText(PendaftaranDokterAfterPoli.medno);
             namadokter.setText(PendaftaranDokterAfterPoli.parname1);
             politujuan.setText(PendaftaranPoli.servname1);
 
@@ -189,9 +189,7 @@ public class Confirmasi extends AppCompatActivity {
                 saveTempBitmap(bitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
-            } /*catch (IOException e) {
-                e.printStackTrace();
-            }*/
+            }
         }
     }
 
