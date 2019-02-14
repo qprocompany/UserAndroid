@@ -62,7 +62,7 @@ public class CallSoap {
 
     public final String SOAP_ACTION_RegisterApps = "http://tempuri.org/RegisterPatientApps";
     public  final String OPERATION_NAME_RegisterApps = "RegisterPatientApps";
-    public String RegisterApps(String a,String b,String d,String e,String f, String g)
+    public String RegisterApps(String a,String b,String d,String e,String f, String g,String h)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegisterApps);
         request.addProperty("username",a);
@@ -71,6 +71,8 @@ public class CallSoap {
         request.addProperty("sex",e);
         request.addProperty("dob",f);
         request.addProperty("medno",g);
+        request.addProperty("phone",h);
+
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
         envelope.dotNet = true;

@@ -70,10 +70,19 @@ public class PoliAdapter extends RecyclerView.Adapter<PoliAdapter.MyViewHolder>
         holder.name.setText(poli.getServiceUnitName());
         // holder.phone.setText(Dokter.getParamedicName());
 
-        Glide.with(context)
-                .load(poli.getIconFileName())
-                .apply(RequestOptions.circleCropTransform())
-                .into(holder.thumbnail);
+        if(poli.getIconFileName() != null && poli.getIconFileName() != "") {
+            Glide.with(context)
+                    .load(poli.getIconFileName())
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(holder.thumbnail);
+        }
+        else
+        {
+            Glide.with(context)
+                    .load(null)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(holder.thumbnail);
+        }
     }
 
     @Override
