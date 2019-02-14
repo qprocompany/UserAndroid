@@ -35,6 +35,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
     static final ArrayList<String> jadwalListday = new ArrayList<String>();
+    static final ArrayList<String> jadwalListimage = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +105,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             String data[] = s.split("%");
             jadwalList1.clear();
             jadwalListday.clear();
+            jadwalListimage.clear();
             for(int i  = 0; i < data.length;i++)
             {
                 if(data[i].equals("-")==false)
@@ -111,10 +113,11 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
                     String temp[] = data[i].split("#");
                     jadwalList1.add(temp[0].substring(1));
                     jadwalListday.add(temp[3].substring(1));
+                    jadwalListimage.add(temp[4].substring(1));
                 }
             }
 
-            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListday));
+            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListday,jadwalListimage));
             grid.setOnItemClickListener((parent, view, position, id) ->  {
                         //Toast.makeText(getApplicationContext(),data[position], Toast.LENGTH_SHORT).show();
                         String temp[] = data[position].split("#");
