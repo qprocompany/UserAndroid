@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "info.androidhive.recyclerviewsearch"
         minSdkVersion 17
@@ -36,7 +36,6 @@ dependencies {
     implementation('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.13.0') {
         transitive = true
     }
-
   //  androidTestImplementation 'junit:junit:4.12'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -85,5 +84,4 @@ dependencies {
     //QRCode
     implementation 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
     implementation 'com.google.zxing:core:3.2.1'
-
 }

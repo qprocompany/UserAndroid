@@ -34,10 +34,10 @@ public class CallSoap {
 
     public final String SOAP_ACTION_JADWAL = "http://tempuri.org/JadwalDokter";
     public final String OPERATION_NAME_JADWAL = "JadwalDokter";
-    public String JadwalHarian(String a)
+    public String JadwalHarian(String servunit)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_JADWAL);
-        request.addProperty("a",a);
+        request.addProperty("servunit",servunit);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
         envelope.dotNet = true;

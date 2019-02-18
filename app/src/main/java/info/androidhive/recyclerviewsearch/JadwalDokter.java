@@ -2,13 +2,21 @@ package info.androidhive.recyclerviewsearch;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,21 +25,45 @@ import android.widget.CalendarView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 import info.androidhive.Adapter.JadwalDokterAdapter;
-import info.androidhive.Adapter.SectionsPageAdapter;
+import info.androidhive.Adapter.JadwalPoliAdapter;
+import info.androidhive.Model.Poli;
 
-public class JadwalDokter extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-    private CalendarView calendarView;
-    public static String date = "null";
-    private GridView listView;
-    private JadwalDokterAdapter mAdapter;
-    private static ArrayList<String> jadwalList,jadwalListday,jadwalListimage;
-    public static String parid;
-    String data;
+public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter.ContactsAdapterListener {
+
+    private static final String TAG = PendaftaranPoli.class.getSimpleName();
+    private RecyclerView recyclerView;
+    private List<Poli> PoliList;
+    private JadwalPoliAdapter mAdapter;
+
+    private GridView dokterlist;
+
+    static final ArrayList<String> jadwalList1 = new ArrayList<String>();
+    static final ArrayList<String> jadwalListday = new ArrayList<String>();
+    static final ArrayList<String> jadwalListimage = new ArrayList<String>();
+
+    // url to fetch contacts json
+    //st.Maria
+    //private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/RegistrationAndroid.ashx";
+    //Qpro DB
+    public  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/RegistrationAndroid.ashx";
+    //RSUD Palembang
+    //public  final String URL = "http://192.168.80.112/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";
+    //public  final String URL = "http://202.152.26.123/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,36 +73,24 @@ public class JadwalDokter extends AppCompatActivity implements DatePickerDialog.
         StrictMode.setThreadPolicy(policy);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // toolbar fancy stuffr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Jadwal Dokter");
-        calendarView = findViewById(R.id.calendarView);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                if( month < 10)
-                {
-                    if(dayOfMonth < 10) {
-                        date = "0" + dayOfMonth + "/" + "0"+(++month) + "/" + year;
-                    }
-                    else
-                    {
-                        date =  dayOfMonth + "/"+ "0" +(++month) + "/" + year;
-                    }
-                }
-                else
-                {
-                    if(dayOfMonth < 10) {
-                        date = "0" + dayOfMonth + "/" +(++month) + "/" + year;
-                    }
-                    else
-                    {
-                        date = dayOfMonth + "/" +(++month) + "/" + year;
-                    }
-                }
-                new jadwaldokter(date).execute();
-            }
-        });
+
+        dokterlist = (GridView) findViewById(R.id.list_view);
+        recyclerView = findViewById(R.id.polirs);
+        PoliList = new ArrayList<>();
+        mAdapter = new JadwalPoliAdapter(this, PoliList, this);
+
+        whiteNotificationBar(recyclerView);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, DividerItemDecoration.VERTICAL, 36));
+        recyclerView.setAdapter(mAdapter);
+
+        fetchContacts();
+
         // white background notification bar
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.testbawah);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -82,93 +102,126 @@ public class JadwalDokter extends AppCompatActivity implements DatePickerDialog.
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.ic_Account:
+                        Intent intent = new Intent(JadwalDokter.this, Main2Activity.class);
+                        startActivity(intent);
                         break;
                     case R.id.ic_Home:
                         Intent intent2 = new Intent(JadwalDokter.this, MainActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.ic_test:
-                        //   Intent intent1 = new Intent(PendaftaranPoli.this, PendaftaranDokter.class);
-                        //  startActivity(intent1);
+                        Intent intent1 = new Intent(JadwalDokter.this, Appointment.class);
+                        startActivity(intent1);
                         break;
                 }
                 return false;
             }
         });
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
-                return true;
 
-            default:
-                return super.onOptionsItemSelected(item);
+    private void fetchContacts() {
+        JsonArrayRequest request = new JsonArrayRequest(URL,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        if (response == null) {
+                            //    Toast.makeText(getApplicationContext(), "Couldn't fetch the contacts! Pleas try again.", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+
+                        List<Poli> items = new Gson().fromJson(response.toString(), new TypeToken<List<Poli>>() {
+                        }.getType());
+
+                        // adding contacts to contacts list
+                        PoliList.clear();
+                        PoliList.addAll(items);
+
+                        // refreshing recycler view
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // error in getting json
+                Log.e(TAG, "Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        MyApplication.getInstance().addToRequestQueue(request);
+    }
+
+    private void whiteNotificationBar(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int flags = view.getSystemUiVisibility();
+            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            view.setSystemUiVisibility(flags);
+            getWindow().setStatusBarColor(Color.WHITE);
         }
     }
-    class jadwaldokter extends AsyncTask<String, String, String>
+
+    @Override
+    public void onContactSelected(Poli poli) {
+        Toast.makeText(JadwalDokter.this,poli.getServiceUnitName(),Toast.LENGTH_SHORT).show();
+        new listdokter(poli.getServiceUnitName()).execute();
+    }
+
+    class listdokter extends AsyncTask<String, String, String>
     {
-        private String val3;
-        public jadwaldokter(String a) {
-            this.val3 = a;
+        private String servunit;
+
+        public listdokter(String servunit) {
+            this.servunit = servunit;
         }
         @Override
         protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
-            data = cs.JadwalHarian(val3);
-            return data;
+            String data1 = cs.JadwalHarian(servunit);
+            return data1;
         }
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //Toast.makeText(JadwalDokter.this,s.toString(),Toast.LENGTH_SHORT).show();
-            jadwalList = new ArrayList<String>();
-            jadwalListday = new ArrayList<String>();
-            jadwalListimage = new ArrayList<String>();
-            jadwalList.clear();
+            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+            String data[] = s.split("%");
+            jadwalList1.clear();
             jadwalListday.clear();
             jadwalListimage.clear();
-            String data1[] = s.split("%");
-            for (int i = 0; i < data1.length-1; i++) {
-                String data2[] = data1[i].split("#");
-                jadwalList.add(data2[1].substring(1));
-                jadwalListday.add(data2[0].substring(1));
-                jadwalListimage.add(data2[2].substring(1));
-            }
-            listView = (GridView) findViewById(R.id.list_view);
-            listView.setAdapter(new JadwalDokterAdapter(JadwalDokter.this, jadwalList,jadwalListday,jadwalListimage));
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String temp[] = s.split("%");
-                    String temp1[] = temp[position].split("#");
-                    parid = temp1[3].substring(1).toString();
-                    //Toast.makeText(JadwalDokter.this,parid,Toast.LENGTH_SHORT).show();
-                    OpenMainMenu();
+            String date = "";
+            for(int i  = 0; i < data.length;i++)
+            {
+                if(data[i].equals("-")==false)
+                {
+                    String temp[] = data[i].split("#");
+                    //if(temp[4].substring(1) != date) {
+                        //jadwalList1.add(date);
+                        //jadwalListday.add("");
+                        //jadwalListimage.add("");
+                     //   if(temp[1] != "-")
+                            jadwalList1.add(temp[1].substring(1));
+                    //    if(temp[0] != "-")
+                            jadwalListday.add(temp[0].substring(1));
+                    //    if(temp[2] != "-")
+                            jadwalListimage.add(temp[2].substring(1));
+                    //}
+                    //else{
+                    //    if(temp[1] != "-")
+                    //        jadwalList1.add(temp[1].substring(1));
+                     //   if(temp[0] != "-")
+                     //       jadwalListday.add(temp[0].substring(1));
+                    //    if(temp[2] != "-")
+                    //        jadwalListimage.add(temp[2].substring(1));
+                    //}
                 }
-            });
+            }
+
+            dokterlist.setAdapter(new JadwalDokterAdapter(JadwalDokter.this, jadwalList1,jadwalListday,jadwalListimage));
+            dokterlist.setOnItemClickListener((parent, view, position, id) ->  {
+                        Toast.makeText(JadwalDokter.this,data[position],Toast.LENGTH_SHORT).show();
+                    }
+            );
         }
-    }
-    @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
-    }
-    public void OpenMainMenu(){
-        Intent intent = new Intent(this, DetailDokter.class);
-        startActivity(intent);
     }
 }
 
