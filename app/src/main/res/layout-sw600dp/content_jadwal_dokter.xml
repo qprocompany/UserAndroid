@@ -12,8 +12,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/polirs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        android:layout_height="100dp"
+        android:scrollbars="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
         <GridView
             android:id="@+id/list_view"
@@ -24,7 +26,8 @@
             android:layout_marginBottom="49dp"
             android:scrollbars="vertical"
             android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusableInTouchMode="false"
+            />
 
 
 </LinearLayout>
