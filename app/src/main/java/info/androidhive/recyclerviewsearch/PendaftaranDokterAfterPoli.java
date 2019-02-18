@@ -31,8 +31,11 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
     public static String parname1;
     public static String tgljanjian1;
+    public static String medno;
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
+    static final ArrayList<String> jadwalListday = new ArrayList<String>();
+    static final ArrayList<String> jadwalListimage = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
         // toolbar fancy stuffr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Poli");
+        getSupportActionBar().setTitle("Dokter");
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         String id1 = PendaftaranPoli.poli1;
@@ -61,12 +64,17 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         String poli = PendaftaranPoli.poli1;
         tgljanjian1 = date;
         //Toast.makeText(PendaftaranDokterAfterPoli.this,paramedid,Toast.LENGTH_SHORT).show();
-        if(todayString.equals(date)) {
-            new pendaftaranpoli(penampung1,poli,paramedid.substring(1)).execute();
+        /*if(tgljanjian1.compareTo(todayString) >= 5)
+        {
+            Toast.makeText(PendaftaranDokterAfterPoli.this,"Tanggal Registrasi Paling Telat Hari Ini",Toast.LENGTH_SHORT).show();
         }
-        else {
-            new appointmentpoli(penampung1,date,workstation.substring(1)).execute();
+        else {*/
+        if (todayString.equals(date)) {
+            new pendaftaranpoli(penampung1, poli, paramedid.substring(1)).execute();
+        } else {
+            new appointmentpoli(penampung1, date, workstation.substring(1)).execute();
         }
+        //}
     }
 
     class dokterlist extends AsyncTask<String, String, String>
@@ -87,7 +95,6 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
             String data1 = cs.DokterByPoli(username);
-
             return data1;
         }
 
@@ -97,16 +104,20 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             String data[] = s.split("%");
             jadwalList1.clear();
+            jadwalListday.clear();
+            jadwalListimage.clear();
             for(int i  = 0; i < data.length;i++)
             {
                 if(data[i].equals("-")==false)
                 {
                     String temp[] = data[i].split("#");
                     jadwalList1.add(temp[0].substring(1));
+                    jadwalListday.add(temp[3].substring(1));
+                    jadwalListimage.add(temp[4].substring(1));
                 }
             }
 
-            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1));
+            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListday,jadwalListimage));
             grid.setOnItemClickListener((parent, view, position, id) ->  {
                         //Toast.makeText(getApplicationContext(),data[position], Toast.LENGTH_SHORT).show();
                         String temp[] = data[position].split("#");
@@ -149,7 +160,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             String Medno = data2[0].toString();
             String name1 = data2[1].toString();
             String email = data2[2].toString();
-
+            medno=Medno;
             String data1 = cs.Appointment(Medno, date, name1, email,work);
 
             return data1;
@@ -161,42 +172,43 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
-             //   Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
                 message = "Appointment";
                 OpenMainMenu();
             }
             else{
-           //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     class pendaftaranpoli extends AsyncTask<String, String, String>
     {
-        private String username,servunit,paramid;
-
+        private String username1,servunit,paramid;
 
         public pendaftaranpoli(String username,String servunit,String paramid) {
 
-            this.username = username;
+            this.username1 = username;
             this.servunit = servunit;
             this.paramid = paramid;
             // Do something ...
         }
         @Override
         protected String doInBackground(String... strings) {
-
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
 
-            String data = cs.InfoUser(username);
+            String data = cs.InfoUser(username1);
 
             String data2[] = data.split(",");
 
             String Medno = data2[0].toString();
+            String name1 = data2[1].toString();
+            String email = data2[2].toString();
 
+            medno=Medno;
             String data1 = cs.Registration(Medno,servunit,"personal",paramid);
 
             return data1;
@@ -205,7 +217,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-
+            Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
                 message = "Pendaftaran";
@@ -213,12 +225,12 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             }
             else if(s.indexOf("duplicate") > 0)
             {
-           //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokterAfterPoli.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
             }
             else{
-                //Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+                Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             }
         }
     }

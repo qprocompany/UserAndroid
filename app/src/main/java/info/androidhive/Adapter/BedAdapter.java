@@ -75,7 +75,6 @@ public class BedAdapter  extends RecyclerView.Adapter<BedAdapter.MyViewHolder>
         holder.name.setText(bed.getClassName());
         holder.phone.setText(bed.getClassCode1());
         //Picasso.with(context).load(bed.getPictureFileName()).into(holder.thumbnail);
-
         Picasso.get()
                 .load(bed.getPictureFileName())
                 .into(holder.thumbnail);

@@ -129,8 +129,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/sexline"
+        android:id="@+id/phoneline"
         android:layout_above="@+id/nameline">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nomor HP"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hpno"
+            android:hint="08123456789"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/sexline"
+        android:layout_above="@+id/phoneline">
 
         <TextView
             android:layout_width="match_parent"

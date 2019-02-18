@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class RegisterApps extends AppCompatActivity {
 
-    EditText name, email,password,tgl,bulan,tahun,medical;
+    EditText name, email,password,tgl,bulan,tahun,medical,phone;
     RadioButton male,female;
     Button submit;
 
@@ -35,6 +35,7 @@ public class RegisterApps extends AppCompatActivity {
         male = (RadioButton) findViewById(R.id.male);
         female = (RadioButton) findViewById(R.id.female);
         medical = (EditText) findViewById(R.id.medicalno);
+        phone = (EditText) findViewById(R.id.hpno);
 
         submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -48,29 +49,31 @@ public class RegisterApps extends AppCompatActivity {
                 {
                     sex = "Wanita";
                 }
-                String Email = "0",Pass = "0",Name = "0",Date = "0",med = "0";
+                String Email = "0",Pass = "0",Name = "0",Date = "0",med = "0",phone1 = "0";
                 Email = email.getText().toString();
                 Pass = password.getText().toString();
                 Name = name.getText().toString();
                 Date = tgl.getText().toString()+"/"+bulan.getText().toString()+"/"+tahun.getText().toString();
                 med = medical.getText().toString();
+                phone1 = phone.getText().toString();
                 //Toast.makeText(RegisterApps.this,Date,Toast.LENGTH_SHORT).show();
-                new submited(Email,Pass,Name,sex,Date,med).execute();
+                new submited(Email,Pass,Name,sex,Date,med,phone1).execute();
             }
         });
     }
 
     class submited extends AsyncTask<String, String, String>
     {
-        private String username, password,name ,sex1, dob,medno;
+        private String username, password,name ,sex1, dob,medno,phone;
 
-        public submited(String a, String b, String d, String e, String f, String g) {
+        public submited(String a, String b, String d, String e, String f, String g,String h) {
             this.username = a;
             this.password = b;
             this.name = d;
             this.sex1 = e;
             this.dob = f;
             this.medno = g;
+            this.phone = h;
         }
 
         @Override
@@ -80,7 +83,7 @@ public class RegisterApps extends AppCompatActivity {
             CallSoap cs = new CallSoap();
 
             String data = "";
-            data = cs.RegisterApps(username,password,name,sex1,dob,medno);
+            data = cs.RegisterApps(username,password,name,sex1,dob,medno,phone);
             return data;
         }
 

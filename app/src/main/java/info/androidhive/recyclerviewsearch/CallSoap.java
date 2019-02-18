@@ -62,7 +62,7 @@ public class CallSoap {
 
     public final String SOAP_ACTION_RegisterApps = "http://tempuri.org/RegisterPatientApps";
     public  final String OPERATION_NAME_RegisterApps = "RegisterPatientApps";
-    public String RegisterApps(String a,String b,String d,String e,String f, String g)
+    public String RegisterApps(String a,String b,String d,String e,String f, String g,String h)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegisterApps);
         request.addProperty("username",a);
@@ -71,6 +71,8 @@ public class CallSoap {
         request.addProperty("sex",e);
         request.addProperty("dob",f);
         request.addProperty("medno",g);
+        request.addProperty("phone",h);
+
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
         envelope.dotNet = true;
@@ -355,7 +357,7 @@ public class CallSoap {
     public  final String OPERATION_NAME_RegNo = "RegistrationNo";
     public String RegNo(String medno)
     {
-        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegisterApps);
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegNo);
         request.addProperty("medno",medno);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -367,7 +369,7 @@ public class CallSoap {
         Object response = null;
         try
         {
-            httpTransport.call(SOAP_ACTION_RegisterApps, envelope);
+            httpTransport.call(SOAP_ACTION_RegNo, envelope);
             response = envelope.getResponse();
             SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
             String data = response1.toString();

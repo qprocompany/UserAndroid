@@ -29,7 +29,7 @@ public class JadwalDokter extends AppCompatActivity implements DatePickerDialog.
     public static String date = "null";
     private GridView listView;
     private JadwalDokterAdapter mAdapter;
-    private static ArrayList<String> jadwalList;
+    private static ArrayList<String> jadwalList,jadwalListday,jadwalListimage;
     public static String parid;
     String data;
     @Override
@@ -137,14 +137,20 @@ public class JadwalDokter extends AppCompatActivity implements DatePickerDialog.
             super.onPostExecute(s);
             //Toast.makeText(JadwalDokter.this,s.toString(),Toast.LENGTH_SHORT).show();
             jadwalList = new ArrayList<String>();
+            jadwalListday = new ArrayList<String>();
+            jadwalListimage = new ArrayList<String>();
             jadwalList.clear();
+            jadwalListday.clear();
+            jadwalListimage.clear();
             String data1[] = s.split("%");
             for (int i = 0; i < data1.length-1; i++) {
                 String data2[] = data1[i].split("#");
                 jadwalList.add(data2[1].substring(1));
+                jadwalListday.add(data2[0].substring(1));
+                jadwalListimage.add(data2[2].substring(1));
             }
             listView = (GridView) findViewById(R.id.list_view);
-            listView.setAdapter(new JadwalDokterAdapter(JadwalDokter.this, jadwalList));
+            listView.setAdapter(new JadwalDokterAdapter(JadwalDokter.this, jadwalList,jadwalListday,jadwalListimage));
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

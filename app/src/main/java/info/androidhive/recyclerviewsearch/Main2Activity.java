@@ -113,11 +113,12 @@ public class Main2Activity extends AppCompatActivity{
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             String data[] = s.split(",");
+            //Toast.makeText(Main2Activity.this,s,Toast.LENGTH_SHORT).show();
             MEDICAL.setText(data[0].toString());
             NAMA.setText(data[1].toString());
             EMAIL.setText(data[2].toString());
-            String data1[] = data[3].split(" ");
-            TGLLAHIR.setText(data1[0].toString());
+            TGLLAHIR.setText(data[3].substring(0,data[3].indexOf(" ")));
+            NOTELEP.setText(data[4].toString());
             new GetImage(Login.username1).execute();
         }
     }

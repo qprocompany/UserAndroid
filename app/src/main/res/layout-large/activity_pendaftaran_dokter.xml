@@ -39,7 +39,6 @@
             android:id="@+id/testbawah"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_clear_day_24dp"
             app:menu="@menu/menu_utama">
 
 
