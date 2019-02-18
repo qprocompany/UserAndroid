@@ -14,15 +14,17 @@ import java.util.ArrayList;
 
 import info.androidhive.recyclerviewsearch.R;
 
-public class JadwalDokterAdapter extends BaseAdapter {
+public class ListDokterJadwalDokter extends BaseAdapter {
     private Context context;
-    private final ArrayList<String> mobileValues,mobileValuesday,jadwalListimage;
+    private final ArrayList<String> mobileValues,mobileValuesday,jadwalListimage,days,time;
 
-    public JadwalDokterAdapter(Context context, ArrayList<String> mobileValues, ArrayList<String> mobileValuesday,ArrayList<String> jadwalListimage) {
+    public ListDokterJadwalDokter(Context context, ArrayList<String> mobileValues, ArrayList<String> mobileValuesday,ArrayList<String> jadwalListimage,ArrayList<String> days,ArrayList<String> time) {
         this.context = context;
         this.mobileValues = mobileValues;
         this.mobileValuesday = mobileValuesday;
         this.jadwalListimage = jadwalListimage;
+        this.days = days;
+        this.time = time;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -37,16 +39,18 @@ public class JadwalDokterAdapter extends BaseAdapter {
             gridView = new View(context);
 
             // get layout from mobile.xml
-            gridView = inflater.inflate(R.layout.user_row_jadwal, null);
+            gridView = inflater.inflate(R.layout.user_row_jadwal_dokter_list, null);
         } else {
             gridView = (View) convertView;
         }
         // set value into textview
         TextView textView = (TextView) gridView
-                .findViewById(R.id.name);
+                .findViewById(R.id.name1);
         TextView day = (TextView) gridView
-                .findViewById(R.id.day);
-        ImageView img = gridView.findViewById(R.id.imagedokter);
+                .findViewById(R.id.phone1);
+        ImageView img = gridView.findViewById(R.id.thumbnail1);
+        TextView day1 = gridView.findViewById(R.id.day1);
+        TextView time1 = gridView.findViewById(R.id.time1);
 
         textView.setText(mobileValues.get(position));
         day.setText(mobileValuesday.get(position));
@@ -54,6 +58,8 @@ public class JadwalDokterAdapter extends BaseAdapter {
                 .load(jadwalListimage.get(position))
                 .into(img);
 
+        day1.setText(days.get(position));
+        time1.setText(time.get(position));
         return gridView;
     }
 

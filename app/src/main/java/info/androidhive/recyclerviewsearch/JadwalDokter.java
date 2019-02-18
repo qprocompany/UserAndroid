@@ -40,6 +40,7 @@ import java.util.List;
 
 import info.androidhive.Adapter.JadwalDokterAdapter;
 import info.androidhive.Adapter.JadwalPoliAdapter;
+import info.androidhive.Adapter.ListDokterJadwalDokter;
 import info.androidhive.Model.Poli;
 
 public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter.ContactsAdapterListener {
@@ -54,6 +55,8 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
     static final ArrayList<String> jadwalListday = new ArrayList<String>();
     static final ArrayList<String> jadwalListimage = new ArrayList<String>();
+    static final ArrayList<String> jadwalListdays = new ArrayList<String>();
+    static final ArrayList<String> jadwalListtime = new ArrayList<String>();
 
     // url to fetch contacts json
     //st.Maria
@@ -188,6 +191,8 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
             jadwalList1.clear();
             jadwalListday.clear();
             jadwalListimage.clear();
+            jadwalListdays.clear();
+            jadwalListtime.clear();
             String date = "";
             for(int i  = 0; i < data.length;i++)
             {
@@ -204,6 +209,8 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
                             jadwalListday.add(temp[0].substring(1));
                     //    if(temp[2] != "-")
                             jadwalListimage.add(temp[2].substring(1));
+                            jadwalListdays.add("Senin - Sabtu");
+                            jadwalListtime.add("08:00 - 20:00");
                     //}
                     //else{
                     //    if(temp[1] != "-")
@@ -216,7 +223,7 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
                 }
             }
 
-            dokterlist.setAdapter(new JadwalDokterAdapter(JadwalDokter.this, jadwalList1,jadwalListday,jadwalListimage));
+            dokterlist.setAdapter(new ListDokterJadwalDokter(JadwalDokter.this, jadwalList1,jadwalListday,jadwalListimage,jadwalListdays,jadwalListtime));
             dokterlist.setOnItemClickListener((parent, view, position, id) ->  {
                         Toast.makeText(JadwalDokter.this,data[position],Toast.LENGTH_SHORT).show();
                     }
