@@ -31,7 +31,7 @@ public class DetailDokter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_dokter);
+        setContentView(R.layout.activity_detail_dokter); 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         parid = JadwalDokter.parid;
         image = (CircularImageView) findViewById(R.id.img_detail);

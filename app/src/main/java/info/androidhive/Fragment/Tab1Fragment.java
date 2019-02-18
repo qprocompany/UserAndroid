@@ -1,20 +1,15 @@
 package info.androidhive.Fragment;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +18,6 @@ import android.widget.Toast;
 import info.androidhive.Adapter.SectionsPageAdapter;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
-import info.androidhive.recyclerviewsearch.MainActivity;
 import info.androidhive.recyclerviewsearch.MapsActivity;
 import info.androidhive.recyclerviewsearch.Pendaftaran;
 import info.androidhive.recyclerviewsearch.PicassoImageLoadingService;
@@ -217,8 +211,8 @@ public class Tab1Fragment extends Fragment {
     }
     private void setLayout() {
         String url[] = new String[]{
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20jantung%20sehat.jpg",
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/promo%20melahirkan.jpg"
+                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/img_0.jpg",
+                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/img_1.jpg"
         };
         for (int i = 0; i < 2; i++) {
             FlipperView view = new FlipperView(getActivity().getBaseContext());
