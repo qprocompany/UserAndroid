@@ -493,4 +493,32 @@ public class CallSoap {
         }
         return response.toString();
     }
+
+    public final String SOAP_ACTION_Poli = "http://tempuri.org/PoliList";
+    public  final String OPERATION_NAME_Poli = "PoliList";
+    public String Poli(String data1)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Poli);
+        request.addProperty("a",data1);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+        envelope.setOutputSoapObject(request);
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Poli, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
 }

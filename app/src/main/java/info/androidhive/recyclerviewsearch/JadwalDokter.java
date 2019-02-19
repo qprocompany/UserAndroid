@@ -16,13 +16,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.GridView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -43,29 +46,21 @@ import info.androidhive.Adapter.JadwalPoliAdapter;
 import info.androidhive.Adapter.ListDokterJadwalDokter;
 import info.androidhive.Model.Poli;
 
-public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter.ContactsAdapterListener {
+public class JadwalDokter extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private static final String TAG = PendaftaranPoli.class.getSimpleName();
-    private RecyclerView recyclerView;
-    private List<Poli> PoliList;
-    private JadwalPoliAdapter mAdapter;
+
+    Spinner spinner;
 
     private GridView dokterlist;
+
+    static final ArrayList<String> jadwalListPoli = new ArrayList<String>();
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
     static final ArrayList<String> jadwalListday = new ArrayList<String>();
     static final ArrayList<String> jadwalListimage = new ArrayList<String>();
     static final ArrayList<String> jadwalListdays = new ArrayList<String>();
     static final ArrayList<String> jadwalListtime = new ArrayList<String>();
-
-    // url to fetch contacts json
-    //st.Maria
-    //private static final String URL = "http://36.91.120.14/SPHAIRA_TRAIN_ADT/Services/RegistrationAndroid.ashx";
-    //Qpro DB
-    public  final String URL = "http://192.168.80.63/Sphaira_LIVE_ADT/Services/RegistrationAndroid.ashx";
-    //RSUD Palembang
-    //public  final String URL = "http://192.168.80.112/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";
-    //public  final String URL = "http://202.152.26.123/SPHAIRA_ADT/Services/RegistrationAndroid.ashx";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,20 +75,8 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
         getSupportActionBar().setTitle("Jadwal Dokter");
 
         dokterlist = (GridView) findViewById(R.id.list_view);
-        recyclerView = findViewById(R.id.polirs);
-        PoliList = new ArrayList<>();
-        mAdapter = new JadwalPoliAdapter(this, PoliList, this);
-
-        whiteNotificationBar(recyclerView);
-
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, DividerItemDecoration.VERTICAL, 36));
-        recyclerView.setAdapter(mAdapter);
-
-        fetchContacts();
-
+        spinner = findViewById(R.id.spinnerdokter);
+        new listpoli().execute();
         // white background notification bar
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.testbawah);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -122,51 +105,40 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
         });
     }
 
-    private void fetchContacts() {
-        JsonArrayRequest request = new JsonArrayRequest(URL,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        if (response == null) {
-                            //    Toast.makeText(getApplicationContext(), "Couldn't fetch the contacts! Pleas try again.", Toast.LENGTH_LONG).show();
-                            return;
-                        }
-
-                        List<Poli> items = new Gson().fromJson(response.toString(), new TypeToken<List<Poli>>() {
-                        }.getType());
-
-                        // adding contacts to contacts list
-                        PoliList.clear();
-                        PoliList.addAll(items);
-
-                        // refreshing recycler view
-                        mAdapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // error in getting json
-                Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        MyApplication.getInstance().addToRequestQueue(request);
-    }
-
-    private void whiteNotificationBar(View view) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            int flags = view.getSystemUiVisibility();
-            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            view.setSystemUiVisibility(flags);
-            getWindow().setStatusBarColor(Color.WHITE);
-        }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //Toast.makeText(JadwalDokter.this, jadwalListPoli.get(position), Toast.LENGTH_SHORT).show();
+        new listdokter(jadwalListPoli.get(position)).execute();
     }
 
     @Override
-    public void onContactSelected(Poli poli) {
-        Toast.makeText(JadwalDokter.this,poli.getServiceUnitName(),Toast.LENGTH_SHORT).show();
-        new listdokter(poli.getServiceUnitName()).execute();
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    class listpoli extends AsyncTask<String, String, String>
+    {
+        @Override
+        protected String doInBackground(String... strings) {
+            CallSoap cs = new CallSoap();
+            String data1 = cs.Poli("a");
+            return data1;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            String data[] = s.split(",");
+            for(int i = 0; i < data.length;i++){
+                jadwalListPoli.add(data[i].toString());
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(JadwalDokter.this, android.R.layout.simple_spinner_item, jadwalListPoli);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapter);
+            spinner.setScrollContainer(true);
+            spinner.setOnItemSelectedListener(JadwalDokter.this);
+        }
     }
 
     class listdokter extends AsyncTask<String, String, String>
@@ -186,7 +158,7 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JadwalDokter.this,s,Toast.LENGTH_SHORT).show();
             String data[] = s.split("%");
             jadwalList1.clear();
             jadwalListday.clear();
@@ -196,30 +168,15 @@ public class JadwalDokter extends AppCompatActivity implements JadwalPoliAdapter
             String date = "";
             for(int i  = 0; i < data.length;i++)
             {
+
                 if(data[i].equals("-")==false)
                 {
                     String temp[] = data[i].split("#");
-                    //if(temp[4].substring(1) != date) {
-                        //jadwalList1.add(date);
-                        //jadwalListday.add("");
-                        //jadwalListimage.add("");
-                     //   if(temp[1] != "-")
-                            jadwalList1.add(temp[1].substring(1));
-                    //    if(temp[0] != "-")
-                            jadwalListday.add(temp[0].substring(1));
-                    //    if(temp[2] != "-")
-                            jadwalListimage.add(temp[2].substring(1));
-                            jadwalListdays.add("Senin - Sabtu");
-                            jadwalListtime.add("08:00 - 20:00");
-                    //}
-                    //else{
-                    //    if(temp[1] != "-")
-                    //        jadwalList1.add(temp[1].substring(1));
-                     //   if(temp[0] != "-")
-                     //       jadwalListday.add(temp[0].substring(1));
-                    //    if(temp[2] != "-")
-                    //        jadwalListimage.add(temp[2].substring(1));
-                    //}
+                    jadwalList1.add(temp[1].substring(1));
+                    jadwalListday.add(temp[0].substring(1));
+                    jadwalListimage.add(temp[2].substring(1));
+                    jadwalListdays.add("Senin - Sabtu");
+                    jadwalListtime.add("08:00 - 20:00");
                 }
             }
 
