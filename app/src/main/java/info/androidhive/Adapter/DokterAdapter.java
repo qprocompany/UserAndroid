@@ -72,7 +72,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
         final Dokter Dokter = DokterListFiltered.get(position);
         holder.name.setText(Dokter.getParamedicName());
         holder.phone.setText(Dokter.getServiceUnitName());
-        holder.day.setText(Dokter.getDaysName());
+        holder.day.setText(Dokter.getDays() + " " + Dokter.getTimes());
         Glide.with(context)
                 .load(Dokter.getPictureFileName())
                 .apply(RequestOptions.circleCropTransform())
