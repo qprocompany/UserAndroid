@@ -233,16 +233,16 @@ public class Tab1Fragment extends Fragment {
             String url[] = s.split(",");
             for (int i = 0; i < url.length; i++) {
                 FlipperView view = new FlipperView(getActivity().getBaseContext());
-                view.setImageUrl(url[i])
-                        .setDescription("Here" + (i + 1));
+                view.setImageUrl(url[i]);
+                       // .setDescription("Here" + (i + 1));
                 flipperLayout.addFlipperView(view);
                 view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
                     @Override
                     public void onFlipperClick(FlipperView flipperView) {
 
-                        Toast.makeText(getActivity()
-                                , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
-                                , Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getActivity()
+                       //         , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
+                        //        , Toast.LENGTH_SHORT).show();
                     }
                 });
             }
