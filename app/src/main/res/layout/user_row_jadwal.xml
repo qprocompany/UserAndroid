@@ -32,11 +32,5 @@
             android:layout_height="20dp"
             android:textColor="@color/contact_number"
             android:textSize="12sp" />
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="300dp"
-            android:layout_height="25dp"
-            android:textColor="@color/contact_number"
-            android:textSize="12sp" />
     </LinearLayout>
 </LinearLayout>

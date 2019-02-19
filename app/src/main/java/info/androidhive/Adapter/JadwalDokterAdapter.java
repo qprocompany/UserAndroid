@@ -16,12 +16,11 @@ import info.androidhive.recyclerviewsearch.R;
 
 public class JadwalDokterAdapter extends BaseAdapter {
     private Context context;
-    private final ArrayList<String> mobileValues,mobileValuesday,jadwalListimage,jadwalListDays,jadwalListTime;
+    private final ArrayList<String> mobileValues,jadwalListimage,jadwalListDays,jadwalListTime;
 
-    public JadwalDokterAdapter(Context context, ArrayList<String> mobileValues, ArrayList<String> mobileValuesday,ArrayList<String> jadwalListimage,ArrayList<String> jadwalListDays,ArrayList<String> jadwalListTime) {
+    public JadwalDokterAdapter(Context context, ArrayList<String> mobileValues, ArrayList<String> jadwalListimage,ArrayList<String> jadwalListDays,ArrayList<String> jadwalListTime) {
         this.context = context;
         this.mobileValues = mobileValues;
-        this.mobileValuesday = mobileValuesday;
         this.jadwalListimage = jadwalListimage;
         this.jadwalListDays = jadwalListDays;
         this.jadwalListTime = jadwalListTime;
@@ -51,11 +50,10 @@ public class JadwalDokterAdapter extends BaseAdapter {
         ImageView img = gridView.findViewById(R.id.imagedokter);
 
         textView.setText(mobileValues.get(position));
-        day.setText(mobileValuesday.get(position));
+        day.setText(jadwalListDays.get(position)+ " " + jadwalListTime.get(position));
         Picasso.get()
                 .load(jadwalListimage.get(position))
                 .into(img);
-
         return gridView;
     }
 

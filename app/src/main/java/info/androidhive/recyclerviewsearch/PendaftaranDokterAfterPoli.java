@@ -34,7 +34,6 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     public static String medno;
 
     static final ArrayList<String> jadwalList1 = new ArrayList<String>();
-    static final ArrayList<String> jadwalListday = new ArrayList<String>();
     static final ArrayList<String> jadwalListimage = new ArrayList<String>();
     static final ArrayList<String> jadwalListDays = new ArrayList<String>();
     static final ArrayList<String> jadwalListTime = new ArrayList<String>();
@@ -103,10 +102,9 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+            Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             String data[] = s.split("%");
             jadwalList1.clear();
-            jadwalListday.clear();
             jadwalListimage.clear();
             jadwalListDays.clear();
             jadwalListTime.clear();
@@ -116,14 +114,13 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
                 {
                     String temp[] = data[i].split("#");
                     jadwalList1.add(temp[0].substring(1));
-                    jadwalListday.add(temp[3].substring(1));
-                    jadwalListimage.add(temp[4].substring(1));
-                    jadwalListDays.add(temp[5].substring(1));
-                    jadwalListTime.add(temp[6].substring(1));
+                    jadwalListimage.add(temp[3].substring(1));
+                    jadwalListDays.add(temp[4].substring(1));
+                    jadwalListTime.add(temp[5].substring(1));
                 }
             }
 
-            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListday,jadwalListimage,jadwalListDays,jadwalListTime));
+            grid.setAdapter(new JadwalDokterAdapter(PendaftaranDokterAfterPoli.this, jadwalList1,jadwalListimage,jadwalListDays,jadwalListTime));
             grid.setOnItemClickListener((parent, view, position, id) ->  {
                         //Toast.makeText(getApplicationContext(),data[position], Toast.LENGTH_SHORT).show();
                         String temp[] = data[position].split("#");
