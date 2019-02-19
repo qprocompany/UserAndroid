@@ -16,13 +16,15 @@ import info.androidhive.recyclerviewsearch.R;
 
 public class JadwalDokterAdapter extends BaseAdapter {
     private Context context;
-    private final ArrayList<String> mobileValues,mobileValuesday,jadwalListimage;
+    private final ArrayList<String> mobileValues,mobileValuesday,jadwalListimage,jadwalListDays,jadwalListTime;
 
-    public JadwalDokterAdapter(Context context, ArrayList<String> mobileValues, ArrayList<String> mobileValuesday,ArrayList<String> jadwalListimage) {
+    public JadwalDokterAdapter(Context context, ArrayList<String> mobileValues, ArrayList<String> mobileValuesday,ArrayList<String> jadwalListimage,ArrayList<String> jadwalListDays,ArrayList<String> jadwalListTime) {
         this.context = context;
         this.mobileValues = mobileValues;
         this.mobileValuesday = mobileValuesday;
         this.jadwalListimage = jadwalListimage;
+        this.jadwalListDays = jadwalListDays;
+        this.jadwalListTime = jadwalListTime;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
