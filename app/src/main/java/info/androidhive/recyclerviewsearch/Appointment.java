@@ -197,7 +197,7 @@ public class Appointment extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //Toast.makeText(Appointment.this,s,Toast.LENGTH_SHORT).show();
+            Toast.makeText(Appointment.this,s,Toast.LENGTH_SHORT).show();
             poli.clear();
             nama.clear();
             tanggal.clear();

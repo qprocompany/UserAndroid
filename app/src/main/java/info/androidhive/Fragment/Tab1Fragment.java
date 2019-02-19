@@ -2,6 +2,7 @@ package info.androidhive.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -10,12 +11,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import info.androidhive.Adapter.HistoryTodayTomorrowAdapter;
 import info.androidhive.Adapter.SectionsPageAdapter;
+import info.androidhive.recyclerviewsearch.Appointment;
+import info.androidhive.recyclerviewsearch.CallSoap;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;
@@ -210,25 +215,37 @@ public class Tab1Fragment extends Fragment {
 
     }
     private void setLayout() {
-        String url[] = new String[]{
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/img_0.jpg",
-                "http://192.168.80.63/SPHAIRA_LIVE_ADT/Promo/img_1.jpg"
-        };
-        for (int i = 0; i < 2; i++) {
-            FlipperView view = new FlipperView(getActivity().getBaseContext());
-            view.setImageUrl(url[i])
-                    .setDescription("Here" + (i + 1));
-            flipperLayout.addFlipperView(view);
-            view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
-                @Override
-                public void onFlipperClick(FlipperView flipperView) {
+        new promo().execute();
+    }
 
-                    Toast.makeText(getActivity()
-                            , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
-                            , Toast.LENGTH_SHORT).show();
-                }
-            });
+    class promo extends AsyncTask<String, String, String>
+    {
+        @Override
+        protected String doInBackground(String... strings) {
+
+            CallSoap cs = new CallSoap();
+            String data = cs.Promo("a");
+            return data;
         }
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            String url[] = s.split(",");
+            for (int i = 0; i < url.length; i++) {
+                FlipperView view = new FlipperView(getActivity().getBaseContext());
+                view.setImageUrl(url[i])
+                        .setDescription("Here" + (i + 1));
+                flipperLayout.addFlipperView(view);
+                view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
+                    @Override
+                    public void onFlipperClick(FlipperView flipperView) {
 
+                        Toast.makeText(getActivity()
+                                , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
+                                , Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }
     }
 }
