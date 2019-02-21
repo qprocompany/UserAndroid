@@ -47,10 +47,13 @@ public class JadwalDokterAdapter extends BaseAdapter {
                 .findViewById(R.id.name);
         TextView day = (TextView) gridView
                 .findViewById(R.id.day);
+        TextView time = (TextView) gridView
+                .findViewById(R.id.time3);
         ImageView img = gridView.findViewById(R.id.imagedokter);
 
         textView.setText(mobileValues.get(position));
-        day.setText(jadwalListDays.get(position)+ " " + jadwalListTime.get(position));
+        day.setText(jadwalListDays.get(position));
+        time.setText(jadwalListTime.get(position));
         Picasso.get()
                 .load(jadwalListimage.get(position))
                 .into(img);

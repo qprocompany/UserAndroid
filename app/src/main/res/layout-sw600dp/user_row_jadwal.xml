@@ -12,23 +12,35 @@
     <ImageView
         android:layout_width="150sp"
         android:layout_height="150sp"
-        android:id="@+id/imagedokter"/>
+        android:id="@+id/imagedokter"
+        android:paddingRight="10dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
     <TextView
         android:id="@+id/name"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:textColor="@color/contact_number"
         android:fontFamily="sans-serif-medium"
         android:textSize="25dp" />
-    <TextView
-        android:id="@+id/day"
-        android:layout_width="370dp"
-        android:layout_height="75dp"
-        android:textColor="@color/contact_number"
-        android:textSize="25dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:textColor="@color/contact_number"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/time3"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:textColor="@color/contact_number"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 </LinearLayout>
 </LinearLayout>
