@@ -9,20 +9,20 @@
     tools:context="info.androidhive.recyclerviewsearch.JadwalDokter"
     tools:showIn="@layout/activity_jadwal_dokter">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/spinnerdokter" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/spinnerdokter"/>
 
-        <GridView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="49dp"
-            android:scrollbars="vertical"
-            android:focusable="false"
-            android:focusableInTouchMode="false"/>
-    </LinearLayout>
+    <GridView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="49dp"
+        android:scrollbars="vertical"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+</LinearLayout>
 

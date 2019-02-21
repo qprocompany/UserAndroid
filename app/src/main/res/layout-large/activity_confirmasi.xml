@@ -28,129 +28,84 @@
             android:textSize="17dp" />
 
 
-        <ImageView
-            android:id="@+id/imgconf"
-            android:layout_width="match_parent"
-            android:layout_height="236dp"
-            android:layout_weight="1" />
-
         <TextView
-            android:id="@+id/number"
+            android:id="@+id/NoAntrian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="17dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Med. No " />
-
-            <TextView
-                android:id="@+id/medno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:textStyle="bold"
+            android:textSize="120dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="125dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No Antrian" />
-
-            <TextView
-                android:id="@+id/NoAntrian"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/namadokter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama Dokter" />
-
-            <TextView
-                android:id="@+id/namadokter"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
                 android:layout_weight="1"
-                android:gravity="left|center"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="86dp"
-                android:layout_height="wrap_content"
-                android:text="Poli Tujuan " />
-
-            <TextView
-                android:id="@+id/politujuan"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="6dp"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/politujuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="84dp"
-                android:layout_height="wrap_content"
-                android:text="Tanggal" />
-
-            <TextView
-                android:id="@+id/tanggal"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="6dp"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/medno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
         <ImageView

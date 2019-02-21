@@ -27,23 +27,4 @@
         android:layout_height="match_parent"
         android:layout="@layout/content_pendaftaran_dokter" />
 
-    <RelativeLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center">
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/testbawah"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:menu="@menu/menu_utama">
-
-
-        </android.support.design.widget.BottomNavigationView>
-
-    </RelativeLayout>
-
 </android.support.design.widget.CoordinatorLayout>

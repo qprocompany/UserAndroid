@@ -99,21 +99,7 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/bottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentBottom="true">
 
-            <android.support.design.widget.BottomNavigationView
-                android:id="@+id/bottomNavView_Bar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:menu="@menu/menu_utama">
-
-
-            </android.support.design.widget.BottomNavigationView>
-        </RelativeLayout>
 
 
 

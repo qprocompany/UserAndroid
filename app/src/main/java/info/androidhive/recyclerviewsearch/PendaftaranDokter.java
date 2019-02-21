@@ -115,30 +115,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         fetchContacts();
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(id.testbawah);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
-        menuItem.setChecked(true);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem test) {
-                switch (test.getItemId()){
-                    case id.ic_Account:
-                        break;
-                    case id.ic_Home:
-                        Intent intent2 = new Intent(PendaftaranDokter.this, MainActivity.class);
-                        startActivity(intent2);
-                        break;
-                    case id.ic_test:
-                        // Intent intent1 = new Intent(PendaftaranDokter.this, PendaftaranPoli.class);
-                        // startActivity(intent1);
-                        break;
-                }
-                return false;
-            }
-        });
     }
 
     private void fetchContacts() {

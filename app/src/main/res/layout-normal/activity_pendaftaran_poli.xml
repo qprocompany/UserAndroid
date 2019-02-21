@@ -22,7 +22,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_pendaftaran_dokter" />
+        layout="@layout/content_pendaftaran_poli" />
 
     <TextView
         android:id="@+id/penampungtest"
@@ -30,23 +30,10 @@
         android:layout_height="wrap_content"
         android:text="test"/>
 
-    <RelativeLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center">
-
-        <android.support.design.widget.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/testbawah"
-            app:menu="@menu/menu_utama">
 
 
-        </android.support.design.widget.BottomNavigationView>
 
-    </RelativeLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

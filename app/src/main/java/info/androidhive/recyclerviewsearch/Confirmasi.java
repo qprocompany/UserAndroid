@@ -31,8 +31,8 @@ import java.util.Date;
 
 public class Confirmasi extends AppCompatActivity {
     TextView msgcin;
-    TextView medno,NoAntrian,namadokter,politujuan,tanggal,number;
-    ImageView img;
+    TextView medno,NoAntrian,namadokter,politujuan,tanggal;
+
     ImageView ok;
 
     //Save to FILE
@@ -46,35 +46,34 @@ public class Confirmasi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmasi);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        img = (ImageView) findViewById(R.id.imgconf) ;
+
         msgcin = (TextView) findViewById(R.id.message);
         medno = (TextView) findViewById(R.id.medno);
         NoAntrian = (TextView) findViewById(R.id.NoAntrian);
         namadokter = (TextView) findViewById(R.id.namadokter);
         politujuan = (TextView) findViewById(R.id.politujuan);
         tanggal=(TextView) findViewById(R.id.tanggal);
-        number = (TextView) findViewById(R.id.number);
+
         if(PendaftaranDokter.message == "null") {
             Date todayDate = Calendar.getInstance().getTime();
             SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
             String todayString = formatter.format(todayDate);
             msgcin.setText(todayString);
-            NoAntrian.setText("xxxxx");
+            NoAntrian.setText("014");
             if(PendaftaranDokterAfterPoli.tgljanjian1.equals(todayString)) {
                 //new MedNo(Login.username1).execute();
                 new Regno(PendaftaranDokterAfterPoli.medno).execute();
                 msgcin.setText("Registrasi");
-                NoAntrian.setText("xxxxx");
+                NoAntrian.setText("014");
             }
             else {
                 //new MedNo(Login.username1).execute();
-                new AppNo(PendaftaranDokterAfterPoli.medno).execute();
                 msgcin.setText("Appointment");
                 NoAntrian.setText("-");
             }
             //Toast.makeText(Confirmasi.this,PendaftaranDokter.medno,Toast.LENGTH_SHORT).show();
             //medno.setText(PendaftaranDokterAfterPoli.medno);
-            namadokter.setText(PendaftaranDokterAfterPoli.parname1);
+            namadokter.setText(PendaftaranDokterAfterPoli.parname1.substring(1));
             politujuan.setText(PendaftaranPoli.servname1);
 
             try {
@@ -101,7 +100,6 @@ public class Confirmasi extends AppCompatActivity {
                 NoAntrian.setText("xxxx");
             } else {
                 //new MedNo(Login.username1).execute();
-                new AppNo(PendaftaranDokter.medno).execute();
                 msgcin.setText("Appointment");
                 NoAntrian.setText("-");
             }
@@ -146,52 +144,10 @@ public class Confirmasi extends AppCompatActivity {
             return medno1;
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
 
-            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-            try {
-                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
-                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                img.setImageBitmap(bitmap);
-                saveTempBitmap(bitmap);
-            } catch (WriterException e) {
-                e.printStackTrace();
-            }
-            number.setText(s);
-        }
     }
 
-    class AppNo extends AsyncTask<String, String, String>
-    {
-        private String medno;
-        public AppNo(String medno) {
-            this.medno = medno;
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            CallSoap cs = new CallSoap();
-            String medno1 = cs.AppointNo(medno);
-            return medno1;
-        }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-            try {
-                BitMatrix bitMatrix = multiFormatWriter.encode(s, BarcodeFormat.QR_CODE, 200, 200);
-                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                img.setImageBitmap(bitmap);
-                saveTempBitmap(bitmap);
-            } catch (WriterException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public void saveTempBitmap(Bitmap bitmap) {
         if (isExternalStorageWritable()) {

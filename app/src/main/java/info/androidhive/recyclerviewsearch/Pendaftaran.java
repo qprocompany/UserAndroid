@@ -47,45 +47,7 @@ public class Pendaftaran extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.toolbar_title_pendaftaran);
 
 
-        // Set up the ViewPager with the sections adapter.
-        //      mViewPager = (ViewPager) findViewById(R.id.container);
-        //      setupViewPager(mViewPager);
-        //      TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        //      tabLayout.setupWithViewPager(mViewPager);
-        //      tabLayout.getTabAt(0).setIcon(R.drawable.ic_tab_contacts);
-        //      tabLayout.getTabAt(1).setIcon(R.drawable.ic_tab_contacts);
-        //      tabLayout.getTabAt(2).setIcon(R.drawable.ic_tab_contacts);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
-        menuItem.setChecked(true);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-
-                    case R.id.ic_Home:
-                        Intent intent3 = new Intent(Pendaftaran.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.ic_Account:
-                        Intent intent2 = new Intent(Pendaftaran.this, ActivityTwo.class);
-                        startActivity(intent2);
-                        break;
-
-                    case R.id.ic_test:
-                        Intent intent1 = new Intent(Pendaftaran.this, Today.class);
-                        startActivity(intent1);
-                        break;
-
-                }
-                return false;
-            }
-        });
 
         jadwaldokter = findViewById(R.id.Dokter);
         jadwaldokter.setOnClickListener(new View.OnClickListener() {

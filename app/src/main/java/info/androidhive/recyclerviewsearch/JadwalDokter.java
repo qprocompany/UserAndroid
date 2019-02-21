@@ -78,31 +78,7 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
         spinner = findViewById(R.id.spinnerdokter);
         new listpoli().execute();
         // white background notification bar
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.testbawah);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
-        menuItem.setChecked(true);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.ic_Account:
-                        Intent intent = new Intent(JadwalDokter.this, Main2Activity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.ic_Home:
-                        Intent intent2 = new Intent(JadwalDokter.this, MainActivity.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.ic_test:
-                        Intent intent1 = new Intent(JadwalDokter.this, Appointment.class);
-                        startActivity(intent1);
-                        break;
-                }
-                return false;
-            }
-        });
+
     }
 
     @Override

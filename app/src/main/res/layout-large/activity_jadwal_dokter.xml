@@ -25,27 +25,5 @@
         android:id="@+id/include"
         layout="@layout/content_jadwal_dokter" />
 
-    <RelativeLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center">
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/testbawah"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            app:menu="@menu/menu_utama">
-
-
-        </android.support.design.widget.BottomNavigationView>
-
-
-    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
