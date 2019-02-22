@@ -21,9 +21,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -276,6 +281,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
             {
                 message = "Appointment";
                 OpenMainMenu();
+                //OpenMainMenu();
             }
             else{
                    Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
@@ -316,17 +322,13 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
                 message = "Pendaftaran";
                 OpenMainMenu();
             }
-            else if(s.indexOf("duplicate") > 0)
-            {
-                //  Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                Toast.makeText(PendaftaranDokter.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
-            }
             else{
                 Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 
     @Override
     public void onContactSelected(Dokter dokter1) {
@@ -347,7 +349,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         dpd.show(getFragmentManager(), "Datepickerdialog");
     }
     public void OpenMainMenu(){
-        Intent intent = new Intent(this, Confirmasi.class);
+        Intent intent = new Intent(this, PasienByDokter.class);
         startActivity(intent);
     }
 }

@@ -242,7 +242,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     }
 
     public void OpenMainMenu(){
-        Intent intent = new Intent(this, Confirmasi.class);
+        Intent intent = new Intent(this, PasienByPoli.class);
         startActivity(intent);
     }
 }
