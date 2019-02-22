@@ -308,7 +308,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             if(s.equals("True"))
             {
                 message = "Pendaftaran";

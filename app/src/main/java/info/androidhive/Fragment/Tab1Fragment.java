@@ -21,6 +21,7 @@ import info.androidhive.Adapter.HistoryTodayTomorrowAdapter;
 import info.androidhive.Adapter.SectionsPageAdapter;
 import info.androidhive.recyclerviewsearch.Appointment;
 import info.androidhive.recyclerviewsearch.CallSoap;
+import info.androidhive.recyclerviewsearch.ConfirmasiDoctor;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;
@@ -188,7 +189,7 @@ public class Tab1Fragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getActivity(), Pendaftaran.class);
+                Intent intent = new Intent(getActivity(), ConfirmasiDoctor.class);
                 startActivity(intent);
             }
         });

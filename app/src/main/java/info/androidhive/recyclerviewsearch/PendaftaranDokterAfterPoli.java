@@ -102,7 +102,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
             String data[] = s.split("%");
             jadwalList1.clear();
             jadwalListimage.clear();
