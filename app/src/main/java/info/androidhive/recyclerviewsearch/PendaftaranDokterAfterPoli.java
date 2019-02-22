@@ -37,6 +37,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     static final ArrayList<String> jadwalListimage = new ArrayList<String>();
     static final ArrayList<String> jadwalListDays = new ArrayList<String>();
     static final ArrayList<String> jadwalListTime = new ArrayList<String>();
+    public static String nomAnt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -220,13 +221,15 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-            if(s.equals("True"))
+            String val[] = s.split("_");
+            //Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+            if(val[0].equals("True"))
             {
+                nomAnt = val[1];
                 message = "Pendaftaran";
                 OpenMainMenu();
             }
-            else if(s.indexOf("duplicate") > 0)
+            /*else if(s.indexOf("duplicate") > 0)
             {
                 Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
                 //Toast.makeText(PendaftaranDokterAfterPoli.this,"Data Anda Telah Terdaftar",Toast.LENGTH_SHORT).show();
@@ -234,7 +237,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             else{
                 Toast.makeText(PendaftaranDokterAfterPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
                 //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-            }
+            }*/
         }
     }
 

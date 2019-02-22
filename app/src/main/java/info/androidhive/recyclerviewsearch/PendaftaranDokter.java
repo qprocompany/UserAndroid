@@ -64,6 +64,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
     public static String servname;
     public static String tgljanjian;
     public static String medno;
+    public static String nomAnt;
 
     AlertDialog ag;
 
@@ -308,9 +309,10 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.equals("True"))
+            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
+            if(s.substring(0,s.indexOf("_")).equals("True"))
             {
+                nomAnt = s.substring(s.indexOf("_")+1);
                 message = "Pendaftaran";
                 OpenMainMenu();
             }
