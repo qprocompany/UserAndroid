@@ -42,5 +42,6 @@
     <string name="title_activity_jadwal_dokter">JadwalDokter</string>
     <string name="title_activity_appointment">Appointment</string>
     <string name="title_activity_history">History</string>
+    <string name="title_activity_pasien_by_dokter">PasienByDokter</string>
 
 </resources>

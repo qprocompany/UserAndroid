@@ -3,6 +3,7 @@
     package="info.androidhive.recyclerviewsearch">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.NFC" />
@@ -16,6 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBe9P-itehQgH5BG7ox5vizpv5E1iGLMhg" />
@@ -86,10 +89,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Today" />
         <activity android:name=".RiwayatTransaksi" />
-        <activity android:name=".LupaPassword" />
-        <activity android:name=".ConfirmasiDoctor" />
-        <activity android:name=".ConfirmasiPoli"
-            android:theme="@style/AppTheme.NoActionBar" ></activity>
+        <activity android:name=".LupaPassword"></activity>
     </application>
 
 </manifest>

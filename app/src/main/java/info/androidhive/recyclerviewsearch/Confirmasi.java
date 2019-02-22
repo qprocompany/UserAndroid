@@ -59,12 +59,11 @@ public class Confirmasi extends AppCompatActivity {
             SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
             String todayString = formatter.format(todayDate);
             msgcin.setText(todayString);
-            NoAntrian.setText("014");
             if(PendaftaranDokterAfterPoli.tgljanjian1.equals(todayString)) {
                 //new MedNo(Login.username1).execute();
                 new Regno(PendaftaranDokterAfterPoli.medno).execute();
                 msgcin.setText("Registrasi");
-                NoAntrian.setText("014");
+                NoAntrian.setText(PendaftaranDokterAfterPoli.nomAnt);
             }
             else {
                 //new MedNo(Login.username1).execute();
@@ -97,7 +96,7 @@ public class Confirmasi extends AppCompatActivity {
                 //new MedNo(Login.username1).execute();
                 new Regno(PendaftaranDokter.medno).execute();
                 msgcin.setText("Registrasi");
-                NoAntrian.setText("xxxx");
+                NoAntrian.setText(PendaftaranDokter.nomAnt);
             } else {
                 //new MedNo(Login.username1).execute();
                 msgcin.setText("Appointment");
