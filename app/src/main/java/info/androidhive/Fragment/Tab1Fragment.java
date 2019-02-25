@@ -189,7 +189,7 @@ public class Tab1Fragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getActivity(), ConfirmasiDoctor.class);
+                Intent intent = new Intent(getActivity(), Pendaftaran.class);
                 startActivity(intent);
             }
         });
