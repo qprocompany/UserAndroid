@@ -14,35 +14,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
+        <TextView
             android:id="@+id/History"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="9dp"
-            android:text="History" />
+            android:text="History"
+            android:textSize="20dp"
+            android:textColor="@color/contact_number"
+            android:gravity="center"/>
 
-        <Button
+        <TextView
             android:id="@+id/Registration"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="9dp"
-            android:text="Registration" />
+            android:text="Registration"
+            android:textSize="20dp"
+            android:textColor="@color/contact_number"
+            android:gravity="center"/>
 
-        <Button
+        <TextView
             android:id="@+id/Appointment"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="9dp"
-            android:text="Appointment" />
+            android:text="Appointment"
+            android:textSize="20dp"
+            android:textColor="@color/contact_number"
+            android:gravity="center"/>
     </LinearLayout>
 
     <GridView

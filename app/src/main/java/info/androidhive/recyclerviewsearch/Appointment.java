@@ -32,7 +32,7 @@ import info.androidhive.Adapter.SectionsPageAdapter;
 
 public class Appointment extends AppCompatActivity {
     GridView list;
-    Button tomorrow,today,history;
+    TextView tomorrow,today,history;
 
     private static ArrayList<String> poli;
     private static ArrayList<String> nama;
@@ -50,26 +50,31 @@ public class Appointment extends AppCompatActivity {
         nama = new ArrayList<String>();
         tanggal = new ArrayList<String>();
         list = (GridView) findViewById(R.id.list_data);
-        tomorrow = (Button) findViewById(R.id.Appointment);
+
+        tomorrow = findViewById(R.id.Appointment);
         tomorrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new appointment(Login.username1).execute();
+                Toast.makeText(Appointment.this,"Appoint",Toast.LENGTH_SHORT).show();
+                //new appointment(Login.username1).execute();
             }
         });
 
-        today = (Button) findViewById(R.id.Registration);
+        today =  findViewById(R.id.Registration);
         today.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Toast.makeText(Appointment.this,"Reg",Toast.LENGTH_SHORT).show();
                 new regist(Login.username1).execute();
             }
         });
 
-        history = (Button) findViewById(R.id.History);
+        history =  findViewById(R.id.History);
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Toast.makeText(Appointment.this,"History",Toast.LENGTH_SHORT).show();
                 new history(Login.username1).execute();
             }
         });

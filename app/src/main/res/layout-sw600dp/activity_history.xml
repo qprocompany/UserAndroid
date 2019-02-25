@@ -10,27 +10,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
+        <TextView
             android:id="@+id/Historybtn"
-            android:layout_width="150dp"
+            android:layout_width="192dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
             android:layout_alignParentStart="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
-            android:text="HISTORY" />
+            android:text="HISTORY"
+            android:textColor="@color/contact_number"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
-        <Button
+        <TextView
             android:id="@+id/todaybtn"
-            android:layout_width="150dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
             android:layout_alignParentStart="true"
             android:layout_marginStart="226dp"
             android:layout_marginTop="25dp"
-            android:text="TODAY" />
+            android:text="TODAY"
+            android:textColor="@color/contact_number"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
-        <Button
+        <TextView
             android:id="@+id/appointmentbtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -38,7 +44,10 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            android:text="APPOINTMENT" />
+            android:text="APPOINTMENT"
+            android:textColor="@color/contact_number"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
         <GridView
             android:id="@+id/list"

@@ -8,6 +8,6 @@ public class ConfirmasiDoctor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirmasi_doctor);
+        setContentView(R.layout.activity_confirmasi_poli);
     }
 }
