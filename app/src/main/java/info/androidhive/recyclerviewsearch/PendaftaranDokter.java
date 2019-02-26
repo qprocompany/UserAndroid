@@ -276,12 +276,13 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.equals("True"))
+            if(s.substring(0,s.indexOf("_")).equals("True"))
             {
                 message = "Appointment";
+                //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
                 OpenMainMenu();
-                //OpenMainMenu();
             }
             else{
                    Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
@@ -315,11 +316,13 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
             if(s.substring(0,s.indexOf("_")).equals("True"))
             {
                 nomAnt = s.substring(s.indexOf("_")+1);
                 message = "Pendaftaran";
+                //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
                 OpenMainMenu();
             }
             else{
