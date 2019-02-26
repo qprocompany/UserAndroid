@@ -32,7 +32,7 @@ public class PasienByPoli extends AppCompatActivity {
     }
 
     public void OpenNext(){
-        Intent intent = new Intent(this, Confirmasi.class);
+        Intent intent = new Intent(this, ConfirmasiPoli.class);
         startActivity(intent);
     }
 }

@@ -64,19 +64,17 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
     private SearchView searchView;
     private Dokter Dokter;
     private boolean mAutoHighlight;
-    public static String message = "null";
+
     public static String parname;
     public static String servname;
-    public static String tgljanjian;
-    public static String medno;
-    public static String nomAnt;
+
 
     AlertDialog ag;
 
-    private static String penampung1;
-    private static String workstation;
-    private static String servunit;
-    private static String paramid;
+    public static String penampung1;
+    public static String workstation;
+    public static String servunit;
+    public static String paramid;
 
     public static String date;
 
@@ -119,7 +117,6 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         recyclerView.setAdapter(mAdapter);
 
         fetchContacts();
-
 
 
     }
@@ -230,108 +227,8 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth,int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
         //String date = "You picked the following date: From- "+dayOfMonth+"/"+(++monthOfYear)+"/"+year+" To "+dayOfMonthEnd+"/"+(++monthOfYearEnd)+"/"+yearEnd;
         date = dayOfMonth+"/"+(++monthOfYear)+"/"+year;
-        Date todayDate = Calendar.getInstance().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
-        String todayString = formatter.format(todayDate);
-
-        //Toast.makeText(PendaftaranDokter.this,paramid.toString(),Toast.LENGTH_SHORT).show();
-        /*if(tgljanjian.compareTo(todayString) >= 5)
-        {
-            Toast.makeText(PendaftaranDokter.this,"Tanggal Registrasi Paling Telat Hari Ini",Toast.LENGTH_SHORT).show();
-        }
-        else {*/
-        if (todayString.equals(date)) {
-            tgljanjian = date;
-            new pendaftarandokter(penampung1, servunit, paramid).execute();
-        } else {
-            tgljanjian = date;
-            new appointmentdokter(penampung1, date, workstation).execute();
-        }
-        //}
+        OpenMainMenu();
     }
-
-    class appointmentdokter extends AsyncTask<String, String, String>
-    {
-        private String username,date,work;
-        public appointmentdokter(String username, String date, String work1) {
-            this.username = username;
-            this.date = date;
-            this.work = work1;
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            CallSoap cs = new CallSoap();
-            String data = cs.InfoUser(username);
-            String data2[] = data.split(",");
-            String Medno = data2[0].toString();
-            String name1 = data2[1].toString();
-            String email = data2[2].toString();
-            medno=Medno;
-            String data1 = cs.Appointment(Medno, date, name1, email,work);
-            return data1;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.substring(0,s.indexOf("_")).equals("True"))
-            {
-                message = "Appointment";
-                //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
-                OpenMainMenu();
-            }
-            else{
-                   Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokter.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    class pendaftarandokter extends AsyncTask<String, String, String>
-    {
-        private String username,servunit,param;
-        public pendaftarandokter(String username,String servunit,String paramid) {
-            this.username = username;
-            this.servunit = servunit;
-            this.param = paramid;
-            // Do something ...
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            CallSoap cs = new CallSoap();
-            String data = cs.InfoUser(username);
-            String data2[] = data.split(",");
-            String Medno = data2[0];
-            medno = Medno;
-            String data1 = cs.Registration(Medno,servunit,"personal",param);
-            return data1;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.substring(0,s.indexOf("_")).equals("True"))
-            {
-                nomAnt = s.substring(s.indexOf("_")+1);
-                message = "Pendaftaran";
-                //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
-                OpenMainMenu();
-            }
-            else{
-                Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
 
     @Override
     public void onContactSelected(Dokter dokter1) {

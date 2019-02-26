@@ -11,17 +11,12 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import info.androidhive.Adapter.HistoryTodayTomorrowAdapter;
 import info.androidhive.Adapter.SectionsPageAdapter;
-import info.androidhive.recyclerviewsearch.Appointment;
 import info.androidhive.recyclerviewsearch.CallSoap;
-import info.androidhive.recyclerviewsearch.ConfirmasiDoctor;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;

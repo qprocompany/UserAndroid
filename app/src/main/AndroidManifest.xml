@@ -3,7 +3,6 @@
     package="info.androidhive.recyclerviewsearch">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.NFC" />
@@ -17,7 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".Login"
             android:label="@string/app_name"
@@ -69,7 +67,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterApps" />
         <activity android:name=".MapsActivity" />
-        <activity android:name=".Confirmasi" />
         <activity
             android:name=".Appointment"
             android:label="@string/title_activity_appointment"
@@ -84,11 +81,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Today" />
         <activity android:name=".RiwayatTransaksi" />
-        <activity android:name=".LupaPassword"></activity>
-        <activity android:name=".ConfirmasiDoctor" />
-        <activity android:name=".ConfirmasiPoli" />
+        <activity android:name=".LupaPassword" />
         <activity android:name=".PasienByDokter" />
         <activity android:name=".PasienByPoli" />
+        <activity android:name=".ConfirmasiDokter"/>
+        <activity android:name=".ConfirmasiPoli" />
     </application>
 
 </manifest>
