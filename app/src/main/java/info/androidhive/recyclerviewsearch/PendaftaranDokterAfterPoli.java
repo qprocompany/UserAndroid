@@ -39,6 +39,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendaftaran_dokter_after_poli);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // toolbar fancy stuffr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

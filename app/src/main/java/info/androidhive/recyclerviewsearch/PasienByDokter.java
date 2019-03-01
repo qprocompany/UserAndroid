@@ -2,6 +2,7 @@ package info.androidhive.recyclerviewsearch;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -33,6 +34,7 @@ public class PasienByDokter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pasien_by_dokter);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         personal = findViewById(R.id.personal);
         family = findViewById(R.id.family);
         next = findViewById(R.id.next1);

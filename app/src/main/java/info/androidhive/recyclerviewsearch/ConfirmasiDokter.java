@@ -1,6 +1,7 @@
 package info.androidhive.recyclerviewsearch;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class ConfirmasiDokter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmasi_dokter);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         date = findViewById(R.id.textView4);
         regno = findViewById(R.id.textView6);
         antrian = findViewById(R.id.textView9);
