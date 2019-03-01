@@ -42,8 +42,8 @@ public class PasienByDokter extends AppCompatActivity {
                 Toast.makeText(PasienByDokter.this,"Test",Toast.LENGTH_SHORT).show();
                 if(personal.isChecked())
                 {
-                    OpenNext();
-                    /*Date todayDate = Calendar.getInstance().getTime();
+                    //OpenNext();
+                    Date todayDate = Calendar.getInstance().getTime();
                     SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
                     String todayString = formatter.format(todayDate);
                     String date = PendaftaranDokter.date;
@@ -55,13 +55,13 @@ public class PasienByDokter extends AppCompatActivity {
                         tgljanjian = date;
                         OpenNext();
                         new appointmentdokter(PendaftaranDokter.penampung1, date, PendaftaranDokter.workstation).execute();
-                    }*/
+                    }
                 }
             }
         });
     }
 
-    /*class appointmentdokter extends AsyncTask<String, String, String>
+    class appointmentdokter extends AsyncTask<String, String, String>
     {
         private String username,date,work;
         public appointmentdokter(String username, String date, String work1) {
@@ -89,16 +89,16 @@ public class PasienByDokter extends AppCompatActivity {
             super.onPostExecute(s);
 
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            //if(s.substring(0,s.indexOf("_")).equals("True"))
-            //{
+            if(s.substring(0,s.indexOf("_")).equals("True"))
+            {
                 message = "Appointment";
                 //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
-                //OpenNext();
-            //}
-            //else{
+                OpenNext();
+            }
+            else{
              //   Toast.makeText(PasienByDokter.this,s,Toast.LENGTH_SHORT).show();
-                //Toast.makeText(PendaftaranDokter.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            //}
+                Toast.makeText(PasienByDokter.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -129,19 +129,19 @@ public class PasienByDokter extends AppCompatActivity {
             super.onPostExecute(s);
 
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            //if(s.substring(0,s.indexOf("_")).equals("True"))
-            //{
+            if(s.substring(0,s.indexOf("_")).equals("True"))
+            {
             nomAnt = s.substring(s.indexOf("_")+1);
             message = "Pendaftaran";
             //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();
-            //OpenNext();
-            //}
-            //else{
+            OpenNext();
+            }
+            else{
             //    Toast.makeText(PasienByDokter.this,s,Toast.LENGTH_SHORT).show();
-            //Toast.makeText(PendaftaranDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            //}
+            Toast.makeText(PasienByDokter.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
+            }
         }
-    }*/
+    }
 
     public void OpenNext(){
         Intent intent = new Intent(this, ConfirmasiDokter.class);

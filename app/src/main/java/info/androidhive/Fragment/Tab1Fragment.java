@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import info.androidhive.Adapter.SectionsPageAdapter;
 import info.androidhive.recyclerviewsearch.CallSoap;
+import info.androidhive.recyclerviewsearch.ConfirmasiDokter;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;
@@ -177,7 +178,6 @@ public class Tab1Fragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         LinearLayout Daftar = (LinearLayout) v.findViewById(R.id.Daftar);
         Daftar.setOnClickListener(new View.OnClickListener()
         {
