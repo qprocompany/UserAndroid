@@ -27,6 +27,7 @@ public class PasienByDokter extends AppCompatActivity {
     public static String message = "null";
     public static String medno;
     public static String nomAnt;
+    public static String img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +43,15 @@ public class PasienByDokter extends AppCompatActivity {
                 Toast.makeText(PasienByDokter.this,"Test",Toast.LENGTH_SHORT).show();
                 if(personal.isChecked())
                 {
-                    //OpenNext();
                     Date todayDate = Calendar.getInstance().getTime();
                     SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
                     String todayString = formatter.format(todayDate);
                     String date = PendaftaranDokter.date;
                     if (todayString.equals(date)) {
                         tgljanjian = date;
-                        OpenNext();
                         new pendaftarandokter(PendaftaranDokter.penampung1, PendaftaranDokter.servunit, PendaftaranDokter.paramid).execute();
                     } else {
                         tgljanjian = date;
-                        OpenNext();
                         new appointmentdokter(PendaftaranDokter.penampung1, date, PendaftaranDokter.workstation).execute();
                     }
                 }
@@ -89,7 +87,7 @@ public class PasienByDokter extends AppCompatActivity {
             super.onPostExecute(s);
 
             //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.substring(0,s.indexOf("_")).equals("True"))
+            if(s.equals("True"))
             {
                 message = "Appointment";
                 //Toast.makeText(PendaftaranDokter.this,message,Toast.LENGTH_SHORT).show();

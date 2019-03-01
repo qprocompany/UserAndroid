@@ -385,7 +385,7 @@ public class CallSoap {
     public  final String OPERATION_NAME_AppointNo = "AppointmentNo";
     public String AppointNo(String medicnom)
     {
-        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegisterApps);
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_AppointNo);
         request.addProperty("medicnom",medicnom);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -397,7 +397,7 @@ public class CallSoap {
         Object response = null;
         try
         {
-            httpTransport.call(SOAP_ACTION_RegisterApps, envelope);
+            httpTransport.call(SOAP_ACTION_AppointNo, envelope);
             response = envelope.getResponse();
             SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
             String data = response1.toString();

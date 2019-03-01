@@ -5,7 +5,12 @@ import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,121 +18,92 @@ import java.util.Date;
 
 public class ConfirmasiPoli extends AppCompatActivity {
 
-    public static String medno;
-    public static String message = "null";
-    public static String nomAnt;
+    TextView date,regno,antrian,nama,poliname,ruang,start, end;
+    ImageView img,next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmasi_poli);
-        Date todayDate = Calendar.getInstance().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("d/M/yyyy");
-        String todayString = formatter.format(todayDate);
+        date = findViewById(R.id.textView4);
+        regno = findViewById(R.id.textView6);
+        antrian = findViewById(R.id.textView9);
+        nama = findViewById(R.id.textViewName);
+        poliname = findViewById(R.id.textView14);
+        ruang = findViewById(R.id.textView16);
+        start = findViewById(R.id.textView18);
+        end = findViewById(R.id.textView19);
+        next = findViewById(R.id.imageView4);
+        img = findViewById(R.id.imageView2);
 
-        if (todayString.equals(PendaftaranDokterAfterPoli.tgljanjian1)) {
-            new pendaftaranpoli(PendaftaranDokterAfterPoli.penampung1, PendaftaranDokterAfterPoli.parname1, PendaftaranDokterAfterPoli.paramedid.substring(1)).execute();
-        } else {
-            new appointmentpoli(PendaftaranDokterAfterPoli.penampung1, PendaftaranDokterAfterPoli.tgljanjian1, PendaftaranDokterAfterPoli.workstation.substring(1)).execute();
+        date.setText(PendaftaranDokterAfterPoli.tgljanjian1);
+
+        if (PasienByPoli.message.equals("Pendaftaran"))
+        {
+            new Regno().execute();
+            antrian.setText(PasienByPoli.nomAnt);
         }
-    }
-
-    class appointmentpoli extends AsyncTask<String, String, String>
-    {
-        private String username,date,work;
-
-
-        public appointmentpoli(String username, String date, String work1) {
-
-            this.username = username;
-            this.date = date;
-            this.work = work1;
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            CallSoap cs = new CallSoap();
-
-            String data = cs.InfoUser(username);
-
-            String data2[] = data.split(",");
-
-            String Medno = data2[0].toString();
-            String name1 = data2[1].toString();
-            String email = data2[2].toString();
-            medno=Medno;
-            String data1 = cs.Appointment(Medno, date, name1, email,work);
-
-            return data1;
+        else{
+            new AppNo().execute();
+            antrian.setText("-");
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            //Toast.makeText(PendaftaranDokter.this,s,Toast.LENGTH_SHORT).show();
-            if(s.equals("True"))
-            {
-                //   Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-                message = "Appointment";
+        Picasso.get()
+                .load(PendaftaranDokterAfterPoli.imagedokter1)
+                .into(img);
+        nama.setText(PendaftaranDokterAfterPoli.parname1);
+        poliname.setText(PendaftaranPoli.servname1);
+        ruang.setText("Ruang A-14");
+        start.setText("08:00");
+        end.setText("17:00");
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 OpenMainMenu();
             }
-            else{
-                //     Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-                Toast.makeText(ConfirmasiPoli.this,"Maaf Terjadi ke gagalan, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-            }
-        }
+        });
     }
 
-    class pendaftaranpoli extends AsyncTask<String, String, String>
+    class Regno extends AsyncTask<String, String, String>
     {
-        private String username1,servunit,paramid;
-
-        public pendaftaranpoli(String username,String servunit,String paramid) {
-
-            this.username1 = username;
-            this.servunit = servunit;
-            this.paramid = paramid;
-            // Do something ...
-        }
         @Override
         protected String doInBackground(String... strings) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
             CallSoap cs = new CallSoap();
-
-            String data = cs.InfoUser(username1);
-
-            String data2[] = data.split(",");
-
-            String Medno = data2[0].toString();
-            String name1 = data2[1].toString();
-            String email = data2[2].toString();
-
-            medno=Medno;
-            String data1 = cs.Registration(Medno,servunit,"personal",paramid);
-
+            String data = cs.InfoUser(Login.username1);
+            String info[] = data.split(",");
+            String data1 = cs.RegNo(info[0].toString());
             return data1;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            String val[] = s.split("_");
             //Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-            if(val[0].equals("True"))
-            {
-                nomAnt = val[1];
-                message = "Pendaftaran";
-                OpenMainMenu();
-            }
-            else{
-                Toast.makeText(ConfirmasiPoli.this,"Maaf Pendaftaran Anda Gagal, Silahkan Mencoba lagi",Toast.LENGTH_SHORT).show();
-                //    Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
-            }
+            regno.setText(s);
+        }
+    }
+
+    class AppNo extends AsyncTask<String, String, String>
+    {
+        @Override
+        protected String doInBackground(String... strings) {
+            CallSoap cs = new CallSoap();
+            String data = cs.InfoUser(Login.username1);
+            String info[] = data.split(",");
+            String data1 = cs.AppointNo(info[0].toString());
+            return data1;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            //Toast.makeText(PendaftaranDokterAfterPoli.this,s,Toast.LENGTH_SHORT).show();
+            regno.setText(s);
         }
     }
 
     public void OpenMainMenu(){
-        Intent intent = new Intent(this, ConfirmasiPoli.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
