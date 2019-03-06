@@ -24,9 +24,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     GridView grid;
 
     private boolean mAutoHighlight;
-    public static String penampung1,workstation;
-
-
+    public static String penampung1,workstation,imagedokter1;
     public static String paramedid ="";
 
     public static String parname1;
@@ -41,6 +39,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendaftaran_dokter_after_poli);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // toolbar fancy stuffr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -62,6 +61,7 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
 
         String poli = PendaftaranPoli.poli1;
         tgljanjian1 = date;
+        //Toast.makeText(PendaftaranDokterAfterPoli.this,workstation,Toast.LENGTH_SHORT).show();
         OpenMainMenu();
     }
 
@@ -111,9 +111,10 @@ public class PendaftaranDokterAfterPoli extends AppCompatActivity implements Dat
             grid.setOnItemClickListener((parent, view, position, id) ->  {
                         //Toast.makeText(getApplicationContext(),data[position], Toast.LENGTH_SHORT).show();
                         String temp[] = data[position].split("#");
-                        parname1 = temp[0];
-                        paramedid = temp[2];
-                        workstation = temp[1];
+                        parname1 = temp[0].substring(1);
+                        paramedid = temp[2].substring(1);
+                        workstation = temp[1].substring(1);
+                        imagedokter1 = temp[3].substring(1);
                         Calendar now = Calendar.getInstance();
                         DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
                                 PendaftaranDokterAfterPoli.this,

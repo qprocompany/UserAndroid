@@ -67,7 +67,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
 
     public static String parname;
     public static String servname;
-
+    public static String image;
 
     AlertDialog ag;
 
@@ -237,6 +237,7 @@ public class PendaftaranDokter extends AppCompatActivity implements DokterAdapte
         paramid = dokter1.getParamedicID().toString();
         parname = dokter1.getParamedicName();
         servname = dokter1.getServiceUnitName();
+        image = dokter1.getPictureFileName();
         //  Toast.makeText(PendaftaranDokter.this,dokter1.getPictureFileName(),Toast.LENGTH_SHORT).show();
         Calendar now = Calendar.getInstance();
         DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
