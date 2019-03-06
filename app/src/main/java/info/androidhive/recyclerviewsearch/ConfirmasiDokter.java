@@ -36,7 +36,7 @@ public class ConfirmasiDokter extends AppCompatActivity {
         ruang = findViewById(R.id.textView16);
         start = findViewById(R.id.textView18);
         end = findViewById(R.id.textView19);
-        next = findViewById(R.id.imageView4);
+      //  next = findViewById(R.id.imageView4);
 
         date.setText(PendaftaranDokter.date);
         if (PasienByDokter.message.equals("Pendaftaran"))
@@ -57,12 +57,12 @@ public class ConfirmasiDokter extends AppCompatActivity {
         ruang.setText("Ruang A-14");
         start.setText("08:00");
         end.setText("17:00");
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenMainMenu();
-            }
-        });
+//        next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                OpenMainMenu();
+//            }
+//        });
     }
 
     class Regno extends AsyncTask<String, String, String>

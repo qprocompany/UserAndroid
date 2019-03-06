@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import info.androidhive.Adapter.SectionsPageAdapter;
-import info.androidhive.recyclerviewsearch.ActivityPromo;
 import info.androidhive.recyclerviewsearch.CallSoap;
 import info.androidhive.recyclerviewsearch.ConfirmasiDokter;
 import info.androidhive.recyclerviewsearch.Fasilitas;
@@ -25,6 +24,7 @@ import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;
 import info.androidhive.recyclerviewsearch.Pendaftaran;
 import info.androidhive.recyclerviewsearch.PicassoImageLoadingService;
+import info.androidhive.recyclerviewsearch.PromoActivity;
 import info.androidhive.recyclerviewsearch.R;
 import ss.com.bannerslider.Slider;
 import technolifestyle.com.imageslider.FlipperLayout;
@@ -32,7 +32,7 @@ import technolifestyle.com.imageslider.FlipperView;
 
 
 public class Tab1Fragment extends Fragment {
-    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,emergency, promo;
+    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,emergency, promoclass;
     FlipperLayout flipperLayout;
 
 
@@ -190,16 +190,16 @@ public class Tab1Fragment extends Fragment {
                 startActivity(intent);
             }
         });
-        LinearLayout promo = (LinearLayout) v.findViewById(R.id.promo);
-        promo.setOnClickListener(new View.OnClickListener()
+        LinearLayout promoclass = (LinearLayout) v.findViewById(R.id.PromoClass);
+        promoclass.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ActivityPromo.class);
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), PromoActivity.class);
                 startActivity(intent);
             }
         });
-
         return v;
     }
 

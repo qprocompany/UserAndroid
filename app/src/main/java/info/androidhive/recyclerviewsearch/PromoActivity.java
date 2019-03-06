@@ -3,7 +3,7 @@ package info.androidhive.recyclerviewsearch;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ActivityPromo extends AppCompatActivity {
+public class PromoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,5 +11,3 @@ public class ActivityPromo extends AppCompatActivity {
         setContentView(R.layout.activity_promo);
     }
 }
-
-

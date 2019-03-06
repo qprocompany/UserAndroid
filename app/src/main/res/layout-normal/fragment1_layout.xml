@@ -230,7 +230,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/promo"
+                    android:id="@+id/PromoClass"
                     android:layout_width="135dp"
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
