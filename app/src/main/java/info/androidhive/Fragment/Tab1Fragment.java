@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import info.androidhive.Adapter.SectionsPageAdapter;
+import info.androidhive.recyclerviewsearch.ActivityPromo;
 import info.androidhive.recyclerviewsearch.CallSoap;
 import info.androidhive.recyclerviewsearch.ConfirmasiDokter;
 import info.androidhive.recyclerviewsearch.Fasilitas;
@@ -30,7 +32,7 @@ import technolifestyle.com.imageslider.FlipperView;
 
 
 public class Tab1Fragment extends Fragment {
-    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,emergency;
+    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,emergency, promo;
     FlipperLayout flipperLayout;
 
 
@@ -185,6 +187,15 @@ public class Tab1Fragment extends Fragment {
             public void onClick(View v)
             {
                 Intent intent = new Intent(getActivity(), Pendaftaran.class);
+                startActivity(intent);
+            }
+        });
+        LinearLayout promo = (LinearLayout) v.findViewById(R.id.promo);
+        promo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ActivityPromo.class);
                 startActivity(intent);
             }
         });

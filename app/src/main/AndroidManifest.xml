@@ -84,8 +84,9 @@
         <activity android:name=".LupaPassword" />
         <activity android:name=".PasienByDokter" />
         <activity android:name=".PasienByPoli" />
-        <activity android:name=".ConfirmasiDokter"/>
+        <activity android:name=".ConfirmasiDokter" />
         <activity android:name=".ConfirmasiPoli" />
+        <activity android:name=".activity_promo"></activity>
     </application>
 
 </manifest>

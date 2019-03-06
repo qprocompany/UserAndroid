@@ -230,23 +230,32 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/promo"
+                    android:layout_width="135dp"
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
+                    android:background="@color/colorWhite"
                     android:orientation="vertical">
 
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/textview_border"
+                        app:srcCompat="@drawable/ic_promo" />
+
                     <TextView
-                        android:id="@+id/tulisan1"
-                        android:layout_width="135dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorWhite"
-                        android:padding="1dp"
-                        android:text="            "
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Promo"
                         android:textAlignment="center"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@color/colorAquaDark"
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
