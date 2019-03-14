@@ -23,5 +23,6 @@ public class MitraMenu extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+
     }
 }

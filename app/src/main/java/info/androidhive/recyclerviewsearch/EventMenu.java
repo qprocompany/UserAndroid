@@ -23,5 +23,6 @@ public class EventMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

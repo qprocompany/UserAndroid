@@ -8,6 +8,7 @@
     android:background="@color/bgKolor">
 
 
+    
 
     <LinearLayout
         tools:layout_editor_absoluteY="46dp"

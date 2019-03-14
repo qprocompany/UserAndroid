@@ -23,5 +23,6 @@ public class EdukasiMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

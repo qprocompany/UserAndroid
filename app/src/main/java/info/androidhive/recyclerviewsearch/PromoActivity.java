@@ -23,6 +23,7 @@ public class PromoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 
