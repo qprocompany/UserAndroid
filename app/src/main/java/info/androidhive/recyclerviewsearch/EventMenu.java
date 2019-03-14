@@ -6,24 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class PromoActivity extends AppCompatActivity {
+public class EventMenu extends AppCompatActivity {
 
-    LinearLayout listpromo;
+    LinearLayout listevent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_promo);
+        setContentView(R.layout.activity_event_menu);
 
-        listpromo = (LinearLayout) findViewById(R.id.listpromo);
-        listpromo.setOnClickListener(new View.OnClickListener() {
+        listevent = (LinearLayout) findViewById(R.id.listevent);
+        listevent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PromoActivity.this, IsiPromo.class);
+                Intent intent = new Intent(EventMenu.this, IsiEvent.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }

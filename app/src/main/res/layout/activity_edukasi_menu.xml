@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/EduMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".PromoActivity">
+    tools:context=".EdukasiMenu">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/listpromo"
+                android:id="@+id/listeducation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -32,7 +32,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Promo Pembayaran"
+                        android:text="Seminar Antibiotic"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -51,11 +51,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView11"
+                        android:id="@+id/imageView17"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekdarah" />
+                        app:srcCompat="@drawable/edukasi3m" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -75,7 +75,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Hipertensi Mania"
+                        android:text="Seminar Bayi Tabung"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -94,11 +94,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView12"
+                        android:id="@+id/imageView18"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhipertensi" />
+                        app:srcCompat="@drawable/edukasiair" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -118,7 +118,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Ayo CEK HIV"
+                        android:text="Event Jantung Sehat"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -137,11 +137,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView14"
+                        android:id="@+id/imageView19"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhiv" />
+                        app:srcCompat="@drawable/edukasicucitangan" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -161,7 +161,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Cek Kanker"
+                        android:text="Seminar Sehat Rohani"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -181,11 +181,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imageView23"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkanker" />
+                        app:srcCompat="@drawable/edukasidini" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -205,7 +205,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Rapikan Gigi"
+                        android:text="Seminar Kesehatan"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -225,11 +225,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/imageView24"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkesehatan" />
+                        app:srcCompat="@drawable/edukasiibu" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -249,7 +249,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Rapikan Gigi"
+                        android:text="Sehat Menjadi Vegan"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -269,11 +269,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView25"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/flyergigi" />
+                        app:srcCompat="@drawable/edukasijiwa" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -293,7 +293,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Periksa Janin"
+                        android:text="STOP MEROKOK"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -312,15 +312,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView26"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekgratis" />
+                        app:srcCompat="@drawable/edukasipanas" />
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PromoActivity">
+    tools:context=".EventMenu">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,136 +17,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/listpromo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Promo Pembayaran"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="1 januari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekdarah" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Hipertensi Mania"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="20 Juni s/d 1 juli 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhipertensi" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Ayo CEK HIV"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="13 s/d 20 febuari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhiv" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
+                android:id="@+id/listevent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -161,7 +32,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Cek Kanker"
+                        android:text="Seminar Sehat Rohani"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -181,11 +52,140 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imageView16"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkanker" />
+                        app:srcCompat="@drawable/eventjantungsehat" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="Seminar Antibiotic"
+                        android:textAlignment="viewStart"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="1 januari 2019"
+                        android:textAlignment="viewEnd"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/eventantibiotic" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="Seminar Bayi Tabung"
+                        android:textAlignment="viewStart"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="20 Juni s/d 1 juli 2019"
+                        android:textAlignment="viewEnd"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/eventbayitabung" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="Event Jantung Sehat"
+                        android:textAlignment="viewStart"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="13 s/d 20 febuari 2019"
+                        android:textAlignment="viewEnd"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/eventgadget" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -205,7 +205,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Rapikan Gigi"
+                        android:text="Seminar Kesehatan"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -225,11 +225,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/imageView20"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkesehatan" />
+                        app:srcCompat="@drawable/eventkesehatan" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -249,7 +249,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Rapikan Gigi"
+                        android:text="Sehat Menjadi Vegan"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -269,11 +269,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView21"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/flyergigi" />
+                        app:srcCompat="@drawable/eventvegan" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -293,7 +293,7 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Periksa Janin"
+                        android:text="STOP MEROKOK"
                         android:textAlignment="viewStart"
                         android:textSize="14sp" />
 
@@ -312,15 +312,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView22"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekgratis" />
+                        app:srcCompat="@drawable/eventberhentirokok" />
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

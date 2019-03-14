@@ -88,6 +88,12 @@
         <activity android:name=".ConfirmasiPoli" />
         <activity android:name=".activity_promo" />
         <activity android:name=".PromoActivity" />
+        <activity android:name=".EventMenu" />
+        <activity android:name=".EdukasiMenu" />
+        <activity android:name=".MitraMenu" />
+        <activity android:name=".IsiPromo" />
+        <activity android:name=".IsiEdukasi" />
+        <activity android:name=".IsiEvent"></activity>
     </application>
 
 </manifest>

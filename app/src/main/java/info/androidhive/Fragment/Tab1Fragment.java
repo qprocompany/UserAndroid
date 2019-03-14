@@ -19,9 +19,12 @@ import android.widget.TextView;
 import info.androidhive.Adapter.SectionsPageAdapter;
 import info.androidhive.recyclerviewsearch.CallSoap;
 import info.androidhive.recyclerviewsearch.ConfirmasiDokter;
+import info.androidhive.recyclerviewsearch.EdukasiMenu;
+import info.androidhive.recyclerviewsearch.EventMenu;
 import info.androidhive.recyclerviewsearch.Fasilitas;
 import info.androidhive.recyclerviewsearch.JadwalDokter;
 import info.androidhive.recyclerviewsearch.MapsActivity;
+import info.androidhive.recyclerviewsearch.MitraMenu;
 import info.androidhive.recyclerviewsearch.Pendaftaran;
 import info.androidhive.recyclerviewsearch.PicassoImageLoadingService;
 import info.androidhive.recyclerviewsearch.PromoActivity;
@@ -190,13 +193,43 @@ public class Tab1Fragment extends Fragment {
                 startActivity(intent);
             }
         });
-        LinearLayout promoclass = (LinearLayout) v.findViewById(R.id.PromoClass);
-        promoclass.setOnClickListener(new View.OnClickListener()
+        LinearLayout Promo = (LinearLayout) v.findViewById(R.id.Promo);
+        Promo.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 Intent intent = new Intent(getActivity(), PromoActivity.class);
+                startActivity(intent);
+            }
+        });
+        LinearLayout Event = (LinearLayout) v.findViewById(R.id.Event);
+        Event.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), EventMenu.class);
+                startActivity(intent);
+            }
+        });
+        LinearLayout Mitra = (LinearLayout) v.findViewById(R.id.Mitra);
+        Mitra.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), MitraMenu.class);
+                startActivity(intent);
+            }
+        });
+        LinearLayout Education = (LinearLayout) v.findViewById(R.id.Education);
+        Education.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), EdukasiMenu.class);
                 startActivity(intent);
             }
         });
