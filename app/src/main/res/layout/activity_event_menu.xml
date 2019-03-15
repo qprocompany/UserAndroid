@@ -22,7 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -30,20 +31,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Sehat Rohani"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="1 s/d 30 januari 2019"
+                        android:text="29 s/d 30 Jan 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -66,7 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,20 +77,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Antibiotic"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="1 januari 2019"
+                        android:text="10 Jan 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,20 +121,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Bayi Tabung"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="20 Juni s/d 1 juli 2019"
+                        android:text="30 Jun s/d 1 Jul 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -160,20 +165,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Event Jantung Sehat"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="13 s/d 20 febuari 2019"
+                        android:text="20 Feb 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -203,20 +209,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Kesehatan"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="januari s/d febuari 2019"
+                        android:text="10 Feb 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -247,20 +254,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Sehat Menjadi Vegan"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="febuari s/d april 2019"
+                        android:text="15 Apr 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -291,20 +299,21 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="STOP MEROKOK"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="15 s/d 20 mei 2019"
+                        android:text="20 Mei 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout

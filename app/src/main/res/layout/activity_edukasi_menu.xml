@@ -24,27 +24,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Seminar Antibiotic"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="1 januari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -67,27 +47,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Seminar Bayi Tabung"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="20 Juni s/d 1 juli 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -110,27 +70,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Event Jantung Sehat"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="13 s/d 20 febuari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,28 +93,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Seminar Sehat Rohani"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="1 s/d 30 januari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -197,28 +116,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Seminar Kesehatan"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="januari s/d febuari 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -241,28 +139,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Sehat Menjadi Vegan"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="febuari s/d april 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -285,27 +162,7 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="STOP MEROKOK"
-                        android:textAlignment="viewStart"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="15 s/d 20 mei 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"

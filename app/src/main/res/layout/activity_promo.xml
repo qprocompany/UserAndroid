@@ -22,7 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,15 +36,16 @@
                         android:paddingLeft="5dp"
                         android:text="Promo Pembayaran"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="1 januari 2019"
+                        android:text="19 Jan 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -65,7 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -78,15 +81,16 @@
                         android:paddingLeft="5dp"
                         android:text="Hipertensi Mania"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="20 Juni s/d 1 juli 2019"
+                        android:text="20 Jun s/d 5 Jul 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -108,7 +112,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -121,15 +126,16 @@
                         android:paddingLeft="5dp"
                         android:text="Ayo CEK HIV"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="13 s/d 20 febuari 2019"
+                        android:text="13 s/d 20 Feb 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -151,7 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -164,15 +171,16 @@
                         android:paddingLeft="5dp"
                         android:text="Cek Kanker"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="1 s/d 30 januari 2019"
+                        android:text="1 s/d 30 Jan 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -195,7 +203,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -208,15 +217,16 @@
                         android:paddingLeft="5dp"
                         android:text="Rapikan Gigi"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="januari s/d febuari 2019"
+                        android:text=" 1 Jan s/d 28 Feb 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -239,7 +249,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -252,15 +263,16 @@
                         android:paddingLeft="5dp"
                         android:text="Rapikan Gigi"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="febuari s/d april 2019"
+                        android:text="1 Feb s/d 30 Apr 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -283,7 +295,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -296,15 +309,16 @@
                         android:paddingLeft="5dp"
                         android:text="Periksa Janin"
                         android:textAlignment="viewStart"
-                        android:textSize="14sp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:text="15 s/d 20 mei 2019"
+                        android:text="15 s/d 20 Mei 2019"
                         android:textAlignment="viewEnd"
-                        android:textSize="14sp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -315,7 +329,7 @@
                     <ImageView
                         android:id="@+id/imageView8"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:scaleType="fitXY"
                         app:srcCompat="@drawable/cekgratis" />
                 </LinearLayout>

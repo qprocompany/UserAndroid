@@ -2,10 +2,8 @@ package info.androidhive.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -17,8 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import info.androidhive.Adapter.SectionsPageAdapter;
-import info.androidhive.recyclerviewsearch.CallSoap;
-import info.androidhive.recyclerviewsearch.ConfirmasiDokter;
 import info.androidhive.recyclerviewsearch.EdukasiMenu;
 import info.androidhive.recyclerviewsearch.EventMenu;
 import info.androidhive.recyclerviewsearch.Fasilitas;
@@ -31,11 +27,10 @@ import info.androidhive.recyclerviewsearch.PromoActivity;
 import info.androidhive.recyclerviewsearch.R;
 import ss.com.bannerslider.Slider;
 import technolifestyle.com.imageslider.FlipperLayout;
-import technolifestyle.com.imageslider.FlipperView;
 
 
 public class Tab1Fragment extends Fragment {
-    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,emergency, promoclass;
+    LinearLayout Daftar, Jadwal,  Maps, fasilitas,keluar,keluarga,keluargadalam,Emergency, promoclass,Event,Mitra,Education;
     FlipperLayout flipperLayout;
 
 
@@ -84,7 +79,7 @@ public class Tab1Fragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment1_layout, container, false);
         flipperLayout = (FlipperLayout) v.findViewById(R.id.flipper_layout) ;
-        setLayout();
+       // setLayout();
         LinearLayout Maps = (LinearLayout) v.findViewById(R.id.Maps);
         Maps.setOnClickListener(new View.OnClickListener()
         {
@@ -254,38 +249,38 @@ public class Tab1Fragment extends Fragment {
         }
 
     }
-    private void setLayout() {
-        new promo().execute();
-    }
-
-    class promo extends AsyncTask<String, String, String>
-    {
-        @Override
-        protected String doInBackground(String... strings) {
-
-            CallSoap cs = new CallSoap();
-            String data = cs.Promo("a");
-            return data;
-        }
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            String url[] = s.split(",");
-            for (int i = 0; i < url.length; i++) {
-                FlipperView view = new FlipperView(getActivity().getBaseContext());
-                view.setImageUrl(url[i]);
-                       // .setDescription("Here" + (i + 1));
-                flipperLayout.addFlipperView(view);
-                view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
-                    @Override
-                    public void onFlipperClick(FlipperView flipperView) {
-
-                      //  Toast.makeText(getActivity()
-                       //         , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
-                        //        , Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        }
-    }
+//    private void setLayout() {
+//        new promo().execute();
+//    }
+//
+//    class promo extends AsyncTask<String, String, String>
+//    {
+//        @Override
+//        protected String doInBackground(String... strings) {
+//
+//            CallSoap cs = new CallSoap();
+//            String data = cs.Promo("a");
+//            return data;
+//        }
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//            String url[] = s.split(",");
+//            for (int i = 0; i < url.length; i++) {
+//                FlipperView view = new FlipperView(getActivity().getBaseContext());
+//                view.setImageUrl(url[i]);
+//                       // .setDescription("Here" + (i + 1));
+//                flipperLayout.addFlipperView(view);
+//                view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
+//                    @Override
+//                    public void onFlipperClick(FlipperView flipperView) {
+//
+//                      //  Toast.makeText(getActivity()
+//                       //         , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
+//                        //        , Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//        }
+//    }
 }
