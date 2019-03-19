@@ -68,17 +68,9 @@
         <activity android:name=".RegisterApps" />
         <activity android:name=".MapsActivity" />
         <activity
-            android:name=".Appointment"
-            android:label="@string/title_activity_appointment"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PendaftaranDokterAfterPoli"
             android:parentActivityName=".PendaftaranPoli" />
         <activity android:name=".DetailDokter" />
-        <activity
-            android:name=".History"
-            android:label="@string/title_activity_history"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Today" />
         <activity android:name=".RiwayatTransaksi" />
         <activity android:name=".LupaPassword" />
@@ -99,7 +91,8 @@
         <activity
             android:name=".MitraMenu"
             android:label="@string/title_activity_mitra_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Penampung"></activity>
     </application>
 
 </manifest>

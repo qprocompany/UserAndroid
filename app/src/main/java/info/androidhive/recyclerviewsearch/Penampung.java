@@ -1,40 +1,35 @@
 package info.androidhive.recyclerviewsearch;
 
-import android.Manifest;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Toast;
+
+import info.androidhive.Fragment.FragmentAppoin;
+import info.androidhive.Fragment.FragmentHistory;
+import info.androidhive.Fragment.FragmentToday;
+
+public class Penampung extends AppCompatActivity {
 
 
-import info.androidhive.Adapter.SectionsPageAdapter;
-import info.androidhive.Fragment.Tab1Fragment;
-import technolifestyle.com.imageslider.FlipperLayout;
+    private static final String TAG = "Penampung";
 
+    private SectionsPageAdapter mSectionsPageAdapter;
 
-public class MainActivity extends AppCompatActivity {
-    //private Slider slider;
-    //private SectionsPageAdapter mSectionsPageAdapter;
-    FlipperLayout flipperLayout;
-    private ViewPager mViewPager;
-    //TextView usernames;
-    //private static String usernames1;
-    //private String mPackageName;
-    //private BottomNavigationView BottomNavigationView;
+    private ViewPager mViewPager,viewpager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +37,22 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        setContentView(R.layout.activity_penampung);
+        Log.d(TAG, "onCreate: Starting.");
 
-        setContentView(R.layout.activity_main);
+        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+
+//        Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        setupViewPager(mViewPager);
+
+//        viewpager = (ViewPager) findViewById(R.id.container1);
+//        setViewPager(viewpager);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+//        TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabs1);
+        tabLayout.setupWithViewPager(mViewPager);
+//        tabLayout1.setupWithViewPager(viewpager);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -54,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
         iconView.setLayoutParams(layoutParams);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
+        MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
 
@@ -65,56 +74,41 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case R.id.ic_Home:
-
+                        Intent intent = new Intent(Penampung.this, MainActivity.class);
+                        startActivity(intent);
                         break;
 
                     case R.id.ic_Account:
-                        Intent intent2 = new Intent(MainActivity.this, Main2Activity.class);
+                        Intent intent2 = new Intent(Penampung.this, Main2Activity.class);
                         startActivity(intent2);
                         break;
 
                     case R.id.ic_test:
-                        Intent intent1 = new Intent(MainActivity.this, Penampung.class);
-                        startActivity(intent1);
+
                         break;
 
                 }
                 return false;
             }
         });
-
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Permission is not granted
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-                Toast.makeText(this, "Membutuhkan Izin Lokasi", Toast.LENGTH_SHORT).show();
-            } else {
-
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-                        1);
-            }
-        } else {
-            // Permission has already been granted
-            // Toast.makeText(this, "Izin Lokasi diberikan", Toast.LENGTH_SHORT).show();
-        }
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        setupViewPager(mViewPager);
     }
 
 
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Fragment(), "FragmentAppoin");
-        // adapter.addFragment(new Tab2Fragment());
-        // adapter.addFragment(new Tab3Fragment());
+        adapter.addFragment(new FragmentHistory(), "History");
+        adapter.addFragment(new FragmentToday(), "Registrasi");
+        adapter.addFragment(new FragmentAppoin(), "Appointment");
         viewPager.setAdapter(adapter);
     }
+
+//    private void setViewPager(ViewPager viewPager) {
+//        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
+//        adapter.addFragment(new FragmentHistory(), "TEST");
+//        adapter.addFragment(new FragmentToday(), "TEST");
+//        adapter.addFragment(new FragmentAppoin(), "TEST");
+//        viewPager.setAdapter(adapter);
+//    }
 
 }
