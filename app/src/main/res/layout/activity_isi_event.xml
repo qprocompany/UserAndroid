@@ -17,15 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Ayo Jaga Jantung"
-                android:textColor="@color/colorBlack"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,17 +26,10 @@
                 <ImageView
                     android:id="@+id/imageView27"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/jasmanirohani" />
 
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    android:text="Event ini menyediakan food bazar yang akan di selanggarakan pada hari minggu di senayan golf driving range. Selain itu kalian akan di berikan cara masak yang enak dan juga food battle truck."/>
             </LinearLayout>
 
             <Button

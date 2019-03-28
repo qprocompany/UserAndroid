@@ -72,9 +72,9 @@
         android:layout_height="250dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="120dp"
+        android:textSize="100dp"
         android:textColor="@color/colorBlack"
-        android:text="0014" />
+        android:text="0000" />
 
     <View
         android:layout_width="match_parent"
@@ -214,6 +214,11 @@
         android:background="@android:color/darker_gray"/>
 
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ok"
+        android:text="OK"
+        android:textSize="15dp"/>
 
 </LinearLayout>

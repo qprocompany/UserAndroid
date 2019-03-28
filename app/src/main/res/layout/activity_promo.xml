@@ -28,42 +28,34 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Promo Pembayaran"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text="19 Jan 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekdarah" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -73,42 +65,34 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Hipertensi Mania"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="20 Jun s/d 5 Jul 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhipertensi" />
+                        android:paddingLeft="5dp"
+                        android:text="20 Jun s/d 5 Juli 2019"
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -118,42 +102,34 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Ayo CEK HIV"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text="13 s/d 20 Feb 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekhiv" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -163,43 +139,35 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Cek Kanker"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text="1 s/d 30 Jan 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkanker" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -209,43 +177,35 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Rapikan Gigi"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text=" 1 Jan s/d 28 Feb 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekkesehatan" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -255,43 +215,35 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
-                        android:text="Rapikan Gigi"
+                        android:text="Periksa Gigi"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text="1 Feb s/d 30 Apr 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/flyergigi" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listpromo7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -301,37 +253,28 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Periksa Janin"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
                         android:text="15 s/d 20 Mei 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/cekgratis" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
 
             </LinearLayout>

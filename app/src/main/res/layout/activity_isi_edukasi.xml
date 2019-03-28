@@ -6,50 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".IsiEdukasi">
 
-    <ScrollView
+    <ImageView
+        android:id="@+id/imageView11"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-
-        <LinearLayout
-            android:id="@+id/listeducation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Mencegah DBD dengan 3M"
-                android:textColor="@color/colorBlack" />
-
-
-            <ImageView
-                android:id="@+id/imageView30"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/dbd" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:text="Cara mencegah terjadinya DBD yaitu kalian dapat mengikut cara diatas:\n 1. menguras tempat penampungan air\n 2. mengubur barang bekas\n 3. menutup penempatan air"/>
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
+        android:layout_weight="1"
+        app:srcCompat="@drawable/edukasihiv" />
 </LinearLayout>

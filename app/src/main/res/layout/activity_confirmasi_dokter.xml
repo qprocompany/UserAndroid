@@ -72,9 +72,9 @@
     android:layout_height="250dp"
     android:gravity="center"
     android:textStyle="bold"
-    android:textSize="120dp"
+    android:textSize="100dp"
     android:textColor="@color/colorBlack"
-    android:text="0014" />
+    android:text="0000" />
 
 <View
     android:layout_width="match_parent"
@@ -123,10 +123,11 @@
     android:paddingStart="10dp"
     android:text="Details"
     android:textSize="15dp" />
-<View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="@android:color/darker_gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
 
 <TextView
     android:id="@+id/textView13"
@@ -213,7 +214,12 @@
     android:layout_height="2dp"
     android:background="@android:color/darker_gray"/>
 
-
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ok"
+    android:text="OK"
+    android:textSize="15dp"/>
 
 
 </LinearLayout>

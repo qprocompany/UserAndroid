@@ -75,9 +75,9 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
         getSupportActionBar().setTitle("Jadwal Dokter");
 
         dokterlist = (GridView) findViewById(R.id.list_view);
+
         spinner = findViewById(R.id.spinnerdokter);
         new listpoli().execute();
-        // white background notification bar
 
     }
 
@@ -107,7 +107,7 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
 
             String data[] = s.split(",");
             for(int i = 0; i < data.length;i++){
-                jadwalListPoli.add(data[i].toString());
+                jadwalListPoli.add(data[i]);
             }
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(JadwalDokter.this, android.R.layout.simple_spinner_item, jadwalListPoli);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -131,6 +131,9 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
             return data1;
         }
 
+
+
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -144,9 +147,7 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
             String date = "";
             for(int i  = 0; i < data.length;i++)
             {
-
-                if(data[i].equals("-")==false)
-                {
+                if(data[i].equals("-")!=true) {
                     String temp[] = data[i].split("#");
                     jadwalList1.add(temp[1].substring(1));
                     jadwalListday.add(temp[0].substring(1));
@@ -163,5 +164,7 @@ public class JadwalDokter extends AppCompatActivity implements AdapterView.OnIte
             );
         }
     }
+
+
 }
 

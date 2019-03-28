@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,8 @@ public class ConfirmasiDokter extends AppCompatActivity {
 
     TextView date,regno,antrian,nama,poliname,ruang,start, end;
     ImageView img,next;
+
+    Button ok;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,13 @@ public class ConfirmasiDokter extends AppCompatActivity {
         ruang = findViewById(R.id.textView16);
         start = findViewById(R.id.textView18);
         end = findViewById(R.id.textView19);
+        ok = findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenMainMenu();
+            }
+        });
       //  next = findViewById(R.id.imageView4);
 
         date.setText(PendaftaranDokter.date);

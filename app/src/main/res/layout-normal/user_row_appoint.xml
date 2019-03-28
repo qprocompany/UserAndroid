@@ -28,7 +28,7 @@
             android:text="namapoli"
             android:textAlignment="viewStart"
             android:textColor="@color/contact_name"
-            android:textSize="@dimen/contact_name" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/Nama"
@@ -41,7 +41,7 @@
             android:text="nama"
             android:textAlignment="viewStart"
             android:textColor="@color/contact_name"
-            android:textSize="@dimen/contact_name" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/Tanggal"
@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:text="tanggal"
             android:textColor="@color/contact_number"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 

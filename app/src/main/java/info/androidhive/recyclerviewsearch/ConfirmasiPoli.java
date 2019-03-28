@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ public class ConfirmasiPoli extends AppCompatActivity {
 
     TextView date,regno,antrian,nama,poliname,ruang,start, end;
     ImageView img,next;
+
+    Button ok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,13 @@ public class ConfirmasiPoli extends AppCompatActivity {
         end = findViewById(R.id.textView19);
         //ƒnext = findViewById(R.id.imageView4);
         img = findViewById(R.id.imageView2);
+        ok = findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenMainMenu();
+            }
+        });
 
         date.setText(PendaftaranDokterAfterPoli.tgljanjian1);
 

@@ -217,13 +217,13 @@
                                 android:text="3"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorAccent"
-                                android:textSize="100sp"
+                                android:textSize="90sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tulisan"
                                 android:layout_width="125dp"
-                                android:layout_height="55dp"
+                                android:layout_height="45dp"
                                 android:padding="1dp"
                                 android:text="            "
                                 android:textAlignment="center"

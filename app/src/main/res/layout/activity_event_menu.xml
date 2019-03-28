@@ -28,43 +28,36 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Sehat Rohani"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="29 s/d 30 Jan 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventjantungsehat" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listevent2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -74,259 +67,221 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Antibiotic"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="10 Jan 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/listevent3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventantibiotic" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Bayi Tabung"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="30 Jun s/d 1 Jul 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/listevent4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventbayitabung" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Event Jantung Sehat"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="20 Feb 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/listevent5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView15"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventgadget" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Seminar Kesehatan"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="10 Feb 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView20"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventkesehatan" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listevent6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:text="Sehat Menjadi Vegan"
                         android:textAlignment="viewStart"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="15 Apr 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
+                        android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView21"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventvegan" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/listevent7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="STOP MEROKOK"
-                        android:textAlignment="viewStart"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:text="20 Mei 2019"
-                        android:textAlignment="viewEnd"
-                        android:textSize="15dp" />
-                </LinearLayout>
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView22"
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/eventberhentirokok" />
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="STOP MEROKOK"
+                        android:textAlignment="viewStart"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="20 Mei 2019"
+                        android:textAlignment="viewStart"
+                        android:textSize="15dp"
+                        android:textColor="@color/contact_name"
+                        android:fontFamily="sans-serif-medium"/>
                 </LinearLayout>
 
             </LinearLayout>
