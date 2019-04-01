@@ -252,7 +252,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginTop="10dp"
                                 android:background="@drawable/textview_border"
-                                app:srcCompat="@drawable/ic_promo" />
+                                app:srcCompat="@drawable/airc" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -298,7 +298,7 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            app:srcCompat="@drawable/ic_event" />
+                            app:srcCompat="@drawable/airc" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -360,7 +360,7 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            app:srcCompat="@drawable/ic_cooporation" />
+                            app:srcCompat="@drawable/airc" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -399,7 +399,7 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            app:srcCompat="@drawable/ic_education" />
+                            app:srcCompat="@drawable/airc" />
 
                         <TextView
                             android:layout_width="match_parent"
